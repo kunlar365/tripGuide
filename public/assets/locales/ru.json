@@ -134,5 +134,22 @@
     "amenities": "Удобства",
     "freeWiFi": "Бесплатный Wi-Fi 24/7",
     "freeComputer": "Бесплатный компьютер",
-    "moreDetailes": "Подробнее"
+    "moreDetailes": "Подробнее",
+    "20%Off": "СКИДКА В 20",
+    "checkIn": "Регистрироваться",
+    "checkOut": "Проверить",
+    "guest": "Гость",
+    "adultsChildren": "2 взрослых, 1 ребенок",
+    "extraFeatures": "Дополнительные особенности",
+    "allowToBringPet": "Разрешить привезти питомца",
+    "breakfastPerson": "Завтрак в день на человека",
+    "parkingDay": "Парковка в день",
+    "extraPillow": "Дополнительная подушка",
+    "free": "Бесплатно",
+    "price": "Цена",
+    "night": "1 ночь",
+    "discount": "Скидка 20%",
+    "serviceFree": "Бесплатное обслуживание",
+    "totalPayment": "Всего к оплате",
+    "notCharged": "Вы еще не получите оплату"
 }

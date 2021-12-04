@@ -134,5 +134,22 @@
     "amenities": "Qulayliklar",
     "freeWiFi": "24/7 bepul Wi-Fi",
     "freeComputer": "Bepul kompyuter",
-    "moreDetailes": "Batafsil ma'lumot"
+    "moreDetailes": "Batafsil ma'lumot",
+    "20%Off": "20% CHEGIRMA",
+    "checkIn": "Belgilanish",
+    "checkOut": "Tekshirib ko'rmoq",
+    "guest": "Mehmon",
+    "adultsChildren": "2 kattalar, 1 bolalar",
+    "extraFeatures": "Qo'shimcha xususiyatlar",
+    "allowToBringPet": "Hayvonni olib kelishga ruxsat",
+    "breakfastPerson": "Bir kishi uchun bir kun nonushta",
+    "parkingDay": "Kuniga to'xtash joyi",
+    "extraPillow": "Qo'shimcha yostiq",
+    "free": "Bepul",
+    "price": "Narxi",
+    "night": "1 kecha",
+    "discount": "20% chegirma",
+    "serviceFree": "Xizmat bepul",
+    "totalPayment": "Umumiy to'lov",
+    "notCharged": "Sizdan hali toʻlov olinmaydi"
 }

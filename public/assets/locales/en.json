@@ -134,5 +134,22 @@
     "amenities": "Amenities",
     "freeWiFi": "Free wifi 24/7",
     "freeComputer": "Free computer",
-    "moreDetailes": "More detailes"
+    "moreDetailes": "More detailes",
+    "20%Off": "20% OFF",
+    "checkIn": "Check-In",
+    "checkOut": "Check-Out",
+    "guest": "Guest",
+    "adultsChildren": "2 Adults, 1 Children",
+    "extraFeatures": "Extra Features",
+    "allowToBringPet": "Allow to bring pet",
+    "breakfastPerson": "Breakfast a day per person",
+    "parkingDay": "Parking a day",
+    "extraPillow": "Extra pillow",
+    "free": "Free",
+    "price": "Price",
+    "night": "1 Nights",
+    "discount": "Discount 20%",
+    "serviceFree": "Service free",
+    "totalPayment": "Total Payment",
+    "notCharged": "You will not get charged yet"
 }

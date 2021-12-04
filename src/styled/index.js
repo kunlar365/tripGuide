@@ -72,7 +72,15 @@ export const DarkTheme = {
     orangeSpanBg: '#3b3e44',
     orangeSpanText: '#f4f5f6',
     buttonBg: '#3B3E44',
-    yourTour: '#E7ECF3'
+    yourTour: '#E7ECF3',
+    yourTourBg: "#222529",
+    creditCardBorder: "rgba(35, 38, 47, 0.4)",
+    creditCardNumber: "#E7ECF3",
+    cardNumberDiv: "#141416",
+    cardNumberDivBorder: "#222529",
+    saveCard: "#E7ECF3",
+    checkIn: "#f4f5f6",
+    freeSummery: "#e7ecf3"
 };
 
 export const LightTheme = {
@@ -130,10 +138,18 @@ export const LightTheme = {
     orangeSpanBg: '#FBEEE8',
     orangeSpanText: '#DC6E3D',
     buttonBg: '#FFFFFF',
-    yourTour: '#141416'
+    yourTour: '#141416',
+    yourTourBg: "#F4F4F6",
+    creditCardBorder: "#E6E6E6",
+    creditCardNumber: "#353945",
+    cardNumberDiv: "#f4f5f6",
+    cardNumberDivBorder: "#EAEAEA",
+    saveCard: "#4f4f4f",
+    checkIn: "#B1B5C3",
+    freeSummery: "#84878B"
 };
 
-// ${(props) => props.theme.yourTour}
+// ${(props) => props.theme.checkingDiv}
 
 // Header
 
@@ -1231,7 +1247,7 @@ export const DetailesZuich = styled.h4`
 
 export const ZuichDiv = styled.div`
     border-bottom: 1px solid ${(props) => props.theme.detailesBorder};
-    width: 742px;
+    width: 100%;
     padding-bottom: 31px;
 `;
 
@@ -1306,6 +1322,12 @@ export const HotelDetaileAside = styled.div`
 
 export const HotelDetailesComponents = styled.div`
     display: flex;
+    width: 1240px;
+    margin: 0 auto;
+    padding-top: 70px;
+`;
+
+export const HotelPaymentComponents = styled.div`
     width: 1240px;
     margin: 0 auto;
     padding-top: 70px;
@@ -1490,6 +1512,291 @@ export const YourTour = styled.h2`
     font-family: 'DM Sans',sans-serif;
     font-weight: 700;
     color: ${(props) => props.theme.yourTour};
+    margin-bottom: 30px;
+    margin-top: 40px;
+`;
+
+export const DateTitle = styled.h6`
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: ${(props) => props.theme.hotelDetailesText};
+    font-family: 'DM Sans',sans-serif;
+    margin-bottom: 1px;
+`;
+
+export const DateText = styled.p`
+    color: ${(props) => props.theme.bestPlaceText};
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Roboto',sans-serif;
+    margin: 0;
+`;
+
+export const DateDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 470px;
+    background-color: ${(props) => props.theme.yourTourBg};
+    padding: 8px 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+`;
+
+export const CreditCardsDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 416px;
+`;
+
+export const CreditCardDiv = styled.div`
+    padding: 10px 12px;
+    background-color: ${(props) => props.theme.headerBg};
+    border: 1px solid ${(props) => props.theme.creditCardBorder};
+    border-radius: 6px;
+    width: 96px;
+    text-align: center;
+`;
+
+export const HolderName = styled.h3`
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 500;
+    font-family: 'DM Sans',sans-serif;
+    color: #3D4852;
+`;
+
+export const HolderTitle = styled.h3`
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 500;
+    font-family: 'DM Sans',sans-serif;
+    color: #3D4852;
+    margin-top: 25px;
+`;
+
+export const HolderNameDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const CreditCard = styled.div`
+    background-color: #CED9FD;
+    padding: 27px 26px;
+    border-radius: 20px;
+    width: 335px;
+`;
+
+export const CreditCardSecond = styled.div`
+    background-color: #BDDBA6;
+    padding: 27px 26px;
+    border-radius: 20px;
+    width: 335px;
+`;
+
+export const CreditCards = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 690px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+`;
+
+export const CardNumber = styled.h3`
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: 'DM Sans',sans-serif;
+    color: ${(props) => props.theme.creditCardNumber};
+    margin-bottom: 12px;
+    margin-top: 19px;
+`;
+
+export const CardNumberInputDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: ${(props) => props.theme.cardNumberDiv};
+    border: 2px solid ${(props) => props.theme.cardNumberDivBorder};
+    border-radius: 10px;
+    width: 471px;
+    padding: 13px 20px;
+`;
+
+export const CardNumberInput = styled.input`
+    border: none;
+    background: transparent;
+    width: 100%;
+`;
+
+export const CardExpiryDiv = styled.div`
+    background-color: ${(props) => props.theme.cardNumberDiv};
+    border: 2px solid ${(props) => props.theme.cardNumberDivBorder};
+    border-radius: 10px;
+    padding: 13px 20px;
+`;
+
+export const CardsExpiryDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 471px;
+`;
+
+export const SaveCardDiv = styled.div`
+    display: flex;
+    align-items: center;
+    margin-top: 21px;
+`;
+
+export const SaveCardText = styled.p`
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27px;
+    font-family: 'Roboto',sans-serif;
+    color: ${(props) => props.theme.saveCard};
+    margin: 0 0 0 12px;
+`;
+
+export const ConfirmAndBook = styled.button`
+    background-color: #3B71FE;
+    color: #fff;
+    border-radius: 36px;
+    padding: 11px 20px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Roboto',sans-serif;
+    line-height: 27px;
+    margin-top: 35px;
+`;
+
+export const AsideReviews = styled.div`
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+`;
+
+export const AsideTitle = styled.h3`
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px;
+    font-family: 'DM Sans', sans-serif;
+    color: ${(props) => props.theme.hotelDetailesText};
+`;
+
+export const BedroomPrivateRoom = styled.p`
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'DM Sans',sans-serif;
+    color: ${(props) => props.theme.offCostText};
+`;
+
+export const CheckIn = styled.p`
+    color: ${(props) => props.theme.checkIn};
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    font-family: 'DM Sans',sans-serif;
+    margin-bottom: 2px;
+`;
+
+export const Date = styled.p`
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'DM Sans',sans-serif;
+    color: ${(props) => props.theme.bestPlaceText};
+`;
+
+export const CheckInDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const BookedDetailes = styled.h3`
+    color: ${(props) => props.theme.searchLocation};
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 27px;
+    font-family: 'Roboto',sans-serif;
+    margin-bottom: 20px;
+`;
+
+export const Nigths5 = styled.p`
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'DM Sans',sans-serif;
+    color: ${(props) => props.theme.freeSummery};
+    margin: 0;
+`;
+
+export const CostForNight = styled.p`
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'DM Sans',sans-serif;
+    color: ${(props) => props.theme.guestSelect};
+    margin: 0;
+`;
+
+export const CostForNightDiv = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+`;
+
+export const HotelPaymentAsideDiv = styled.div`
+    background-color: ${(props) => props.theme.headerBg};
+    padding: 36px 35px;
+    border-radius: 20px;
+    border: 2px solid ${(props) => props.theme.cardBorders};
+    width: 445px;
+`;
+
+export const Total = styled.div`
+    background-color: ${(props) => props.theme.checkingDiv};
+    padding: 7px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const AsideImg = styled.img`
+    border-radius: 10px;
+    margin-top: 26px;
+    margin-bottom: 32px;
+`;
+
+export const ReportText = styled.p`
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    font-family: 'DM Sans',sans-serif;
+    color: #B1B5C3;
+    margin-top: 30px;
+    margin-bottom: 0;
+`;
+
+export const HotelPaymentDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const HotelPaymentLeftDiv = styled.div`
+    width: 690px;
 `;
 
 // 5 200 000
