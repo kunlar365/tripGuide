@@ -8,33 +8,33 @@ import { useTranslation } from 'react-i18next';
 const HotelPaymentLeft = () => {
 
     const { t } = useTranslation();
-    //{t('notCharged')}
+    //{t('confirm')}
     
     return (
         <HotelPaymentDiv>
             <HotelPaymentLeftDiv>
                 <ZuichDiv>
-                    <Zuich>Confirm your Book</Zuich>
+                    <Zuich>{t('confirmYourBook')}</Zuich>
                 </ZuichDiv>
                 <div>
-                    <YourTour>Your Tour</YourTour>
+                    <YourTour>{t('yourTour')}</YourTour>
                     <DateDiv>
                         <div className="traveller">
-                            <DateTitle>Date</DateTitle>
-                            <DateText>June 27 - 30, 2020</DateText>
+                            <DateTitle>{t('date')}</DateTitle>
+                            <DateText>{t('june')}</DateText>
                         </div>
                         <HiOutlinePencil />
                     </DateDiv>
                     <DateDiv>
                         <div className="traveller">
-                            <DateTitle>Traveller</DateTitle>
-                            <DateText>1 Passenger</DateText>
+                            <DateTitle>{t('traveller')}</DateTitle>
+                            <DateText>{t('passanger')}</DateText>
                         </div>
                         <HiOutlinePencil />
                     </DateDiv>
                 </div>
                 <ZuichDiv>
-                    <YourTour>Creadit Cards</YourTour>
+                    <YourTour>{t('creaditCards')}</YourTour>
                     <CreditCardsDiv>
                         <CreditCardDiv>
                             <img src="/assets/img/creditCard.png" alt="" style={{ width: '41px', height: '29px' }} />
@@ -58,7 +58,7 @@ const HotelPaymentLeft = () => {
                         </HolderNameDiv>
                         <HolderTitle>8948   xxxx  xxxx  7894</HolderTitle>
                         <HolderNameDiv>
-                            <HolderName>Holder Name</HolderName>
+                            <HolderName>{t('holderName')}</HolderName>
                             <img src="/assets/img/XMLID 328.png" alt="" />
                         </HolderNameDiv>
                     </CreditCard>
@@ -69,14 +69,14 @@ const HotelPaymentLeft = () => {
                         </HolderNameDiv>
                         <HolderTitle>8948   xxxx  xxxx  7894</HolderTitle>
                         <HolderNameDiv>
-                            <HolderName>Holder Name</HolderName>
+                            <HolderName>{t('holderName')}</HolderName>
                             <img src="/assets/img/visaCard.png" alt="" />
                         </HolderNameDiv>
                     </CreditCardSecond>
                 </CreditCards>
                 <div>
                     <div>
-                        <CardNumber>Card Number</CardNumber>
+                        <CardNumber>{t('cardNumber')}</CardNumber>
                         <CardNumberInputDiv>
                             <CardNumberInput type="number" placeholder="5884 6241 4444 3333" />
                             <BsCheck2 />
@@ -84,7 +84,7 @@ const HotelPaymentLeft = () => {
                     </div>
                     <CardsExpiryDiv>
                         <div>
-                        <CardNumber>Expiry Date</CardNumber>
+                        <CardNumber>{t('expiryDate')}</CardNumber>
                         <CardExpiryDiv>
                             <CardNumberInput type="number" placeholder="MM / YY" />
                         </CardExpiryDiv>
@@ -98,10 +98,10 @@ const HotelPaymentLeft = () => {
                     </CardsExpiryDiv>
                     <SaveCardDiv>
                         <input type="checkbox" style={{width: '24px',height: '23px'}}/>
-                        <SaveCardText>Save Card</SaveCardText>
+                        <SaveCardText>{t('saveCard')}</SaveCardText>
                     </SaveCardDiv>
                 </div>
-                <ConfirmAndBook type="button">Confirm and Booked</ConfirmAndBook>
+                <ConfirmAndBook type="button">{t('confirm')}</ConfirmAndBook>
             </HotelPaymentLeftDiv>
             <HotelPaymentAside/>
         </HotelPaymentDiv>

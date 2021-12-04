@@ -1,6 +1,15 @@
+import Congrutulations from '../components/Conrutulations';
+import { HotelDetailesSection, HotelDetailesContainer } from '../styled';
+
 const HotelCongrutulations = () => {
-    return(
-        <div></div>
+    return (
+        <section>
+            <HotelDetailesSection>
+                <HotelDetailesContainer>
+                    <Congrutulations/>
+                </HotelDetailesContainer>
+            </HotelDetailesSection>
+        </section>
     )
 };
 

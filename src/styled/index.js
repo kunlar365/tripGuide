@@ -80,7 +80,10 @@ export const DarkTheme = {
     cardNumberDivBorder: "#222529",
     saveCard: "#E7ECF3",
     checkIn: "#f4f5f6",
-    freeSummery: "#e7ecf3"
+    freeSummery: "#e7ecf3",
+    dateTitle: "#fcfcfd",
+    reserveDetail: "#E7ECF3",
+    reserveText: "#84878b"
 };
 
 export const LightTheme = {
@@ -146,10 +149,13 @@ export const LightTheme = {
     cardNumberDivBorder: "#EAEAEA",
     saveCard: "#4f4f4f",
     checkIn: "#B1B5C3",
-    freeSummery: "#84878B"
+    freeSummery: "#84878B",
+    dateTitle: "#353945",
+    reserveDetail: "#777E90",
+    reserveText: "#353945"
 };
 
-// ${(props) => props.theme.checkingDiv}
+// ${(props) => props.theme.reserveText}
 
 // Header
 
@@ -1797,6 +1803,162 @@ export const HotelPaymentDiv = styled.div`
 
 export const HotelPaymentLeftDiv = styled.div`
     width: 690px;
+`;
+
+export const CongrutulationsTitle = styled.h3`
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 21px;
+    font-family: 'DM Sans',sans-serif;
+    color: ${(props) => props.theme.secondTextColor};
+    margin-bottom: 20px;
+`;
+
+export const YourTrip = styled.h1`
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 60px;
+    font-family: 'DM Sans',sans-serif;
+    color: ${(props) => props.theme.exploreCardTitle};
+`;
+
+export const SwitzerlandHotels = styled.h2`
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 44px;
+    font-family: 'DM Sans',sans-serif;
+    color: ${(props) => props.theme.titleColor};
+    margin-top: 37px;
+`;
+
+export const Baggoge = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 380px;
+`;
+
+export const BaggogeText = styled.p`
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    font-family: 'DM Sans',sans-serif;
+    color: ${(props) => props.theme.detailesText};
+    margin: 14px 0 0 0;
+`;
+
+export const DatesTitle = styled.h6`
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    font-family: 'DM Sans',sans-serif; 
+    color: ${(props) => props.theme.dateTitle};
+    margin-bottom: 1px;
+`;
+
+export const DatesText = styled.p`
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'DM Sans',sans-serif; 
+    color: #84878B;
+    margin: 0;
+`;
+
+export const DatesDiv = styled.div`
+    background-color: ${(props) => props.theme.yourTourBg};
+    padding: 7px 20px;
+    width: 49%;
+    border-radius: 12px;
+`;
+
+export const DatesDivs = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    width: 368px;
+`;
+
+export const ReserveDiv = styled.div`
+    background-color: ${(props) => props.theme.yourTourBg};
+    padding: 19px 25px;
+    border-radius: 10px;
+    width: 380px;
+    margin-top: 30px;
+`;
+
+export const ReserveTitle = styled.h3`
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 41px;
+    font-family: 'DM Sans',sans-serif; 
+    color: ${(props) => props.theme.offCost};
+    margin-bottom: 24px;
+`;
+
+export const ReserveDetailes = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+`;
+
+export const ReserveDetailText = styled.p`
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'DM Sans',sans-serif; 
+    color: ${(props) => props.theme.reserveDetail};
+    margin: 0;
+`;
+
+export const ReserveDetailTitle = styled.h6`
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: 'DM Sans',sans-serif;
+    color: ${(props) => props.theme.reserveText};
+    margin: 0;
+`;
+
+export const BookingCode = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+export const GoToYour = styled.button`
+    background-color: #3B71FE;
+    border-radius: 34px;
+    padding: 13.5px 35.5px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 20px;
+    fontt-family: 'DM Sans',sans-serif;
+    margin-top: 43px;
+`;
+
+export const CongrutulationsPage = styled.div`
+    padding-top: 100px;
+`;
+
+export const CongrutulationsMainDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const CongrutulationsImg = styled.img`
+    border-radius: 20px;
+    margin-top: -90px;
+`;
+
+export const FlexDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `;
 
 // 5 200 000

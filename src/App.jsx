@@ -11,6 +11,7 @@ import HotelList from "./pages/HotelList";
 import Footer from "./components/Footer";
 import HotelDetailes from "./pages/HotelDetailes";
 import HotelPayment from "./pages/HotelPayment";
+import HotelCongrutulations from "./pages/HotelCongrutulations";
 
 const App = () => {
 
@@ -34,6 +35,9 @@ const App = () => {
               </Routes>
               <Routes>
                 <Route path='/hotelpayment' element={<HotelPayment/>} />
+              </Routes>
+              <Routes>
+                <Route path='/hotelcongrutulations' element={<HotelCongrutulations/>} />
               </Routes>
               <Footer/>
               {/* <Routes>
