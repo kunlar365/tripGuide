@@ -29,7 +29,7 @@ const Header = () => {
                     {/* <Card>This is card</Card> */}
                     <LogosDiv>
                         <img className="logo" src="/assets/img/Subtract (1).svg" alt="" />
-                        <MainTitle>TripGuide</MainTitle>
+                        <MainTitle href="#">TripGuide</MainTitle>
                     </LogosDiv>
                     <HeaderModals>
                         <Dropdown>

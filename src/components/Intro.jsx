@@ -1,6 +1,7 @@
 import { t } from 'i18next';
-import { Container, IntroTitle, IntroSection, IntroFilterDiv } from '../styled';
+import { Container, IntroTitle, IntroSection } from '../styled';
 import { useTranslation } from 'react-i18next';
+import IntroFilter from './IntroFilterDiv';
 
 const Intro = () => {
 
@@ -10,8 +11,7 @@ const Intro = () => {
         <IntroSection>
             <Container>
                     <IntroTitle>{t('intro_text')}</IntroTitle>
-            <IntroFilterDiv>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem magni labore eaque praesentium? Odit cum facere dolorum! Maiores, eveniet alias nam placeat consectetur quod at non excepturi iure quia aut!</IntroFilterDiv>
-
+                    <IntroFilter />
             </Container>
         </IntroSection>
     );

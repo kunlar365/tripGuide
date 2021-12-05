@@ -159,12 +159,13 @@ export const LightTheme = {
 
 // Header
 
-export const MainTitle = styled.h5`
+export const MainTitle = styled.a`
     font-weight: 700;
     font-size: 20px;
     line-height: 27px;
     color: ${(props) => props.theme.color};
     margin: 0;
+    text-decoration: none;
 `;
 
 export const Flags = styled.img`
@@ -252,6 +253,14 @@ export const IntroFilterDiv = styled.div`
     padding: 60px 30px;
     width: 1170px;
 `;
+
+export const SearchRow = styled.div`
+    width: 850px;
+    padding-bottom: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+`
 
 // Best Place Section
 
@@ -1960,6 +1969,15 @@ export const FlexDiv = styled.div`
     align-items: center;
     justify-content: space-between;
 `;
+
+export const Reservation = styled.span`
+position: relative;
+margin-right: 30px; 
+color: #84878B;
+&.react-tabs__tab--selected {
+    color: ${(props) => props.theme.btnColor};
+}
+`
 
 // 5 200 000
 
