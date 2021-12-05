@@ -31,7 +31,7 @@ const App = () => {
                 <Route path='/hoteldetailes' element={<HotelDetailes/>} />
                 <Route path='/hotelpayment' element={<HotelPayment/>} />
                 <Route path='/hotelcongrutulations' element={<HotelCongrutulations/>} />
-                <Route path='*' element={<NotFound/>} />
+                <Route path='*' element={<NotFound />} />
               </Routes>
               <Footer/>
               {/* <Routes>
