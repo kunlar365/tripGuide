@@ -254,14 +254,6 @@ export const IntroFilterDiv = styled.div`
     width: 1170px;
 `;
 
-export const SearchRow = styled.div`
-    width: 850px;
-    padding-bottom: 26px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-`
-
 // Best Place Section
 
 export const BestPlaceSection = styled.section`

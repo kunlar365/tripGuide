@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import HotelDetailes from "./pages/HotelDetailes";
 import HotelPayment from "./pages/HotelPayment";
 import HotelCongrutulations from "./pages/HotelCongrutulations";
+import NotFound from "./pages/NotFound"
 
 const App = () => {
 
@@ -26,18 +27,11 @@ const App = () => {
               <Header />
               <Routes>
                 <Route path='/' element={<Home />} />
-              </Routes>
-              <Routes>
                 <Route path='/hotellist' element={<HotelList />} />
-              </Routes>
-              <Routes>
                 <Route path='/hoteldetailes' element={<HotelDetailes/>} />
-              </Routes>
-              <Routes>
                 <Route path='/hotelpayment' element={<HotelPayment/>} />
-              </Routes>
-              <Routes>
                 <Route path='/hotelcongrutulations' element={<HotelCongrutulations/>} />
+                <Route path='*' element={<NotFound/>} />
               </Routes>
               <Footer/>
               {/* <Routes>

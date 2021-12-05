@@ -11,7 +11,7 @@ const Intro = () => {
         <IntroSection>
             <Container>
                     <IntroTitle>{t('intro_text')}</IntroTitle>
-                    <IntroFilter />
+                    {/* <IntroFilter /> */}
             </Container>
         </IntroSection>
     );
