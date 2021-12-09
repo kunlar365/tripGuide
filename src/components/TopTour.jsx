@@ -1,48 +1,63 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation } from 'swiper';
 import { useTranslation } from 'react-i18next';
-import { Container, PassionTitle, TopTourText, TopTourSection, TopTourCards, TopTourCard, TopTourSpan, TopTourCityName, TTPopularPlaces, CityAndPPlaces } from '../styled'
+import { IoIosArrowBack } from 'react-icons/io';
+import { IoIosArrowForward } from 'react-icons/io';
+import axios from 'axios';
+import { Container, PassionTitle, TopTourText, TopTourSection, SwiperSliderDiv, TopTourCards, TopTourCard, TopTourSpan, TopTourCityName, TTPopularPlaces, CityAndPPlaces } from '../styled'
+import { useEffect, useState } from 'react';
+import apiCalls from '../config/api';
 
 const TopTour = () => {
 
+    const [tour,setTour] = useState([]);
+    const [error,setError] = useState('');
+
+    useEffect(() => {
+        apiCalls.getTours().then(data => {
+            setTour(data);
+        }).catch( err => {
+            setError(err.message)
+        })
+    }, []);
+
+    SwiperCore.use([Navigation]);
+
     const { t } = useTranslation();
-    
-    return(
+
+    return (
         <TopTourSection>
             <Container>
-                <PassionTitle>{t('topTour_title')}</PassionTitle>
-                <TopTourText>{t('topTour_text')}</TopTourText>
-                <Swiper slidesPerView="3" spaceBetween="30" style={{marginTop: '70px', paddingBottom: '50px'}}>
-                    <SwiperSlide>
+                <SwiperSliderDiv>
+                    <div>
+                        <PassionTitle>{t('topTour_title')}</PassionTitle>
+                        <TopTourText>{t('topTour_text')}</TopTourText>
+                    </div>
+                    <div>
+                        <button type="button" className="my-swiper-button-prev" style={{ color: "#84878b", width: 38, height: 38, borderRadius: '50%', border: 'none', marginRight: '10px' }}><IoIosArrowBack /></button>
+                        <button type="button" className="my-swiper-button-next" style={{ color: "#84878b", width: 38, height: 38, borderRadius: '50%', border: 'none'  }} ><IoIosArrowForward /></button>
+                    </div>
+                </SwiperSliderDiv>
+                <Swiper
+                    slidesPerView={3} spaceBetween={30}
+                    modules={[Navigation]} navigation={{
+                        nextEl: '.my-swiper-button-next',
+                        prevEl: '.my-swiper-button-prev',
+                    }} style={{ marginTop: '70px', paddingBottom: '50px' }}>
+
+                    {tour.map(e => (
+                        <SwiperSlide>
                         <TopTourCard>
-                        <img src="/assets/img/TopTour.png" alt="" />
-                        <TopTourSpan>{t('topTour_country1')}</TopTourSpan>
-                        <CityAndPPlaces>
-                            <TopTourCityName>{t('topTour_city1')}</TopTourCityName>
-                            <TTPopularPlaces>{t('topTour_popularPlaces')}</TTPopularPlaces>
-                        </CityAndPPlaces>
+                            <img style={{borderRadius: '16px'}} src={`assets/img/${e.photo}`} alt="" />
+                            <TopTourSpan>{e.name}</TopTourSpan>
+                            <CityAndPPlaces>
+                                <TopTourCityName>{e.country}</TopTourCityName>
+                                <TTPopularPlaces>{e.place_count} Popular Places</TTPopularPlaces>
+                            </CityAndPPlaces>
                         </TopTourCard>
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <TopTourCard>
-                        <img src="/assets/img/TopTour2.png" alt="" />
-                        <TopTourSpan>{t('topTour_country2')}</TopTourSpan>
-                        <CityAndPPlaces>
-                            <TopTourCityName>{t('topTour_city2')}</TopTourCityName>
-                            <TTPopularPlaces>{t('topTour_popularPlaces')}</TTPopularPlaces>
-                        </CityAndPPlaces>
-                        </TopTourCard>   
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <TopTourCard>
-                        <img src="/assets/img/TopTour3.png" alt="" />
-                        <TopTourSpan>{t('topTour_country3')}</TopTourSpan>
-                        <CityAndPPlaces>
-                            <TopTourCityName>{t('topTour_city3')}</TopTourCityName>
-                            <TTPopularPlaces>{t('topTour_popularPlaces')}</TTPopularPlaces>
-                        </CityAndPPlaces>
-                        </TopTourCard>
-                    </SwiperSlide>
-                    
+                    ))}
+
                 </Swiper>
             </Container>
         </TopTourSection>

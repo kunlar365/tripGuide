@@ -9,11 +9,18 @@ import { RiParkingBoxLine } from 'react-icons/ri';
 import { useTranslation } from 'react-i18next';
 import { MdOutlineLocalOffer } from 'react-icons/md';
 import { BiLoaderCircle } from 'react-icons/bi';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { TPReview, TPCardText, Tower, HotelCard, LoadMoreButton, LoadMoreButtonDiv, HotelDetailesText, ZuichImage, Zuich, ZuichReviews, PropertyDiv, HotelDetailesDiv, BookingButtons, BookingButton, PriceButton, PriceButtonSpan, Hotel } from '../styled'
 
 const HotelListCards = () => {
 
+    let History = useNavigate();
     const { t } = useTranslation();
+
+    const handleSubmit = (el) => {
+        el.preventDefault()
+        History('/hoteldetailes')
+    }
     //{t('viewAll')}
     return (
         <div className="hotelsList">
@@ -70,7 +77,7 @@ const HotelListCards = () => {
                     </HotelDetailesDiv>
                     <div className="buttons">
                         <PriceButton type="button">$320 <PriceButtonSpan>{t('forTwo')}</PriceButtonSpan> </PriceButton>
-                        <BookingButton type="button">{t('bookNow')}</BookingButton>
+                        <BookingButton onClick={handleSubmit} type="button">{t('bookNow')}</BookingButton>
                     </div>
                     </BookingButtons>
                 </Hotel>

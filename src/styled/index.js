@@ -83,7 +83,10 @@ export const DarkTheme = {
     freeSummery: "#e7ecf3",
     dateTitle: "#fcfcfd",
     reserveDetail: "#E7ECF3",
-    reserveText: "#84878b"
+    reserveText: "#84878b",
+    inpBg: "#3B3E44",
+    inpBorder: "#4A4E54",
+    btnColor: "#FCFCFD"
 };
 
 export const LightTheme = {
@@ -152,10 +155,13 @@ export const LightTheme = {
     freeSummery: "#84878B",
     dateTitle: "#353945",
     reserveDetail: "#777E90",
-    reserveText: "#353945"
+    reserveText: "#353945",
+    inpBg: "#f4f5f7",
+    inpBorder: "#E7E8EA",
+    btnColor: "#3B3E44"
 };
 
-// ${(props) => props.theme.reserveText}
+// ${(props) => props.theme.cardBorders}
 
 // Header
 
@@ -252,6 +258,102 @@ export const IntroFilterDiv = styled.div`
     box-shadow: 0px 12px 60px rgb(89 89 89 / 10%);
     padding: 60px 30px;
     width: 1170px;
+`;
+
+export const Passenger = styled.div`
+    display: inline-block;
+    position: relative;
+    margin-left: 25px;
+`;
+
+export const Content = styled.div`
+    display: none;
+    position: absolute;
+    width: 350px;
+    top: -250px;
+    left: 0;
+    padding: 10px 30px;
+    background: ${(props) => props.theme.headerBg};
+    box-shadow: 0px 12px 60px rgba(89, 89, 89, 0.1);
+    border-radius: 16px;
+`;
+
+export const Form = styled.form`
+    margin-top: 28px;
+`;
+
+export const SearchCard = styled.div`
+    width: 25%;
+    position: relative;
+    background: ${(props) => props.theme.inpBg};
+    padding: 10px 20px;
+    border: 1px solid ${(props) => props.theme.inpBorder};
+    border-radius: 8px;
+    &:nth-child(1) {
+        width: 31%;
+    }
+`;
+
+export const SearchRow = styled.div`
+    width: 850px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid ${(props) => props.theme.cardBorders};
+`
+
+export const UserCount = styled.span`
+    font-size: 14px;
+    margin: 0 12px;
+    color: #777e91;
+`;
+
+export const Sum = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 10px;
+    // &:nth-child(2) {
+    //     border-top: 1px solid ${(props) => props.theme.bellAfter};
+    //     border-bottom: 1px solid ${(props) => props.theme.bellAfter};
+    // }
+`;
+
+export const ContentText = styled.span`
+    display: block;
+    margin-bottom:6px;
+    font-weight: 500;
+    color: black;
+`;
+
+export const ContentAge = styled.span`
+    font-size: 14px;
+    color: #B1B5C4;
+`;
+
+export const ContentBtn = styled.button`
+    border: 1px solid #E6E8EC;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 12px;
+    background-color: transparent;
+    color: #E6E8EC;
+`;
+
+export const SearchCardName = styled.label`
+    display: block;
+    margin: 0 0 6px;
+    font-weight: 500;
+    font-size: 18px;
+    color: ${(props) => props.theme.btnColor};
+`;
+
+export const CheckInp = styled.input`
+    width: 200px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
 `;
 
 // Best Place Section
@@ -485,7 +587,19 @@ export const Row = styled.div`
 
 export const TopTourSection = styled.section`
     background-color: ${(props) => props.theme.backgroundColor};
+    padding-top: 70px;
 `;
+
+export const SwiperSliderDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+// export const SwiperButtons = styled.button`
+//     border-none;
+
+// `;
 
 export const TopTourText = styled.p`
     font-size: 16px;
@@ -729,6 +843,7 @@ export const Booking = styled.button`
 export const PassionSection = styled.section`
     background-color: ${(props) => props.theme.backgroundColor};
     padding-bottom: 215px;
+    padding-top: 70px;
 `;
 
 export const PassionTitle = styled.h2`
@@ -738,7 +853,6 @@ export const PassionTitle = styled.h2`
     color: ${(props) => props.theme.secondTitleColor};
     font-family: 'DM Sans', sans-serif;
     margin-bottom: 12px;
-    padding-top: 70px;
 `;
 
 export const TravelPassionText = styled.p`

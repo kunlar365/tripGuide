@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'DM Sans','Poppins','Roboto' sans-serif;
+  font-family: 'DM Sans', 'Poppins', 'Roboto'sans-serif;
 }
 
 .dropdown-toggle::after {
@@ -18,7 +18,7 @@ body {
   padding: 0;
 }
 
-.react-tabs__tab-list { 
+.react-tabs__tab-list {
   border: none !important;
   margin: 0 !important;
 }
@@ -32,17 +32,29 @@ body {
 
 .dateInput::-webkit-inner-spin-button,
 .dateInput::-webkit-calendar-picker-indicator {
-    width: 30%;
-     opacity:0;   
-    -webkit-appearance: none;
- }
+  width: 30%;
+  opacity: 0;
+  -webkit-appearance: none;
+}
 
-::-webkit-datetime-edit-month-field { color: #84878B; }
-::-webkit-datetime-edit-day-field { color: #84878B; }
-::-webkit-datetime-edit-year-field { color: #84878B; }
-::-webkit-datetime-edit-text { color: #84878B; padding: 0 0.1em; }
+::-webkit-datetime-edit-month-field {
+  color: #84878B;
+}
 
-.react-tabs__tab--selected::before{
+::-webkit-datetime-edit-day-field {
+  color: #84878B;
+}
+
+::-webkit-datetime-edit-year-field {
+  color: #84878B;
+}
+
+::-webkit-datetime-edit-text {
+  color: #84878B;
+  padding: 0 0.1em;
+}
+
+.react-tabs__tab--selected::before {
   content: '';
   position: absolute;
   bottom: -30px;
@@ -52,16 +64,28 @@ body {
   background-color: #316BFF;
 }
 
-.react-tabs {
-  margin-top: 30px;
-  margin-bottom: 60px;
-  border-bottom: 1px solid #E6E8EC;
-}
-
 .react-tabs__tab-list {
   padding-bottom: 29px !important;
 }
 
-.react-tabs__tab { 
+.react-tabs__tab {
   margin-right: 40px;
+}
+
+.total {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #3B3E44;
+  border: none;
+  background: transparent;
+  margin-bottom: 27px;
+}
+
+.total.active+.content {
+  display: block;
+}
+
+.total.active .icon-bottom {
+  transform: rotate(180deg);
 }

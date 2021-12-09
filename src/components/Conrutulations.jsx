@@ -4,11 +4,18 @@ import { MdOutlineDateRange } from 'react-icons/md';
 import { BsCash } from 'react-icons/bs';
 import { TiBriefcase } from 'react-icons/ti';
 import { BiBarcode } from 'react-icons/bi';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Congrutulations = () => {
 
+    let History = useNavigate();
     const { t } = useTranslation();
     //{t('goToHome')}
+
+    const handleSubmit = (el) => {
+        el.preventDefault()
+        History('/')
+    }
 
     return (
         <div>
@@ -74,7 +81,7 @@ const Congrutulations = () => {
                     <CongrutulationsImg src="/assets/img/congrutulations.png" alt="" />
 
                 </FlexDiv>
-                <GoToYour type="button">{t('goToHome')}</GoToYour>
+                <GoToYour onClick={handleSubmit} type="button">{t('goToHome')}</GoToYour>
             </CongrutulationsPage>
         </div>
     )

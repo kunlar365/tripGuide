@@ -2,13 +2,19 @@ import { OffCost, OffCostText, NotCharged, TravelUi, DateInput, OffCostSpan, Two
 import { BsCalendar4Week } from 'react-icons/bs';
 import Form from 'react-bootstrap/Form';
 import { useTranslation } from 'react-i18next';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const HotelDetailesAside = () => {
 
+    let History = useNavigate();
     const { t } = useTranslation();
     //{t('notCharged')}
-    
+
+    const handleSubmit = (el) => {
+        el.preventDefault()
+        History('/hotelpayment')
+    }
     return (
         <HotelDetailAside>
             <OffCostDiv>
@@ -102,7 +108,7 @@ const HotelDetailesAside = () => {
                 </PropertyDiv>
                 <PopularFilterTexts>$300</PopularFilterTexts>
             </PropertyTypeDiv>
-            <HotelBooking type="button">{t('bookButton')}</HotelBooking>
+            <HotelBooking onClick={handleSubmit} type="button">{t('bookButton')}</HotelBooking>
             <NotCharged>{t('notCharged')}</NotCharged>
         </HotelDetailAside>
     )

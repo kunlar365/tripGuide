@@ -3,12 +3,19 @@ import { HiOutlinePencil } from 'react-icons/hi';
 import { BsCheck2 } from 'react-icons/bs';
 import HotelPaymentAside from './HotelPaymentAside';
 import { useTranslation } from 'react-i18next';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const HotelPaymentLeft = () => {
 
+    let History = useNavigate();
     const { t } = useTranslation();
     //{t('confirm')}
+
+    const handleSubmit = (el) => {
+        el.preventDefault()
+        History('/hotelcongrutulations')
+    }
     
     return (
         <HotelPaymentDiv>
@@ -101,7 +108,7 @@ const HotelPaymentLeft = () => {
                         <SaveCardText>{t('saveCard')}</SaveCardText>
                     </SaveCardDiv>
                 </div>
-                <ConfirmAndBook type="button">{t('confirm')}</ConfirmAndBook>
+                <ConfirmAndBook onClick={handleSubmit} type="button">{t('confirm')}</ConfirmAndBook>
             </HotelPaymentLeftDiv>
             <HotelPaymentAside/>
         </HotelPaymentDiv>

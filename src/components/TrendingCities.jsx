@@ -1,7 +1,20 @@
 import { Container, TrendingCitiesSection, TrendingCitiesTitle, TrendingCitiesText, TrendingCitiesCards, TrendingCitiesCard, CityInTradeImage, TrendingCityTexts, TrendCityName, TrendCityStar, TCStarCounts, TCStars, TCForNight, TCPay, Booking } from "../styled";
 import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
+import apiCalls from '../config/api';
 
 const TrendingCities = () => {
+
+    const [cities,setCities] = useState([]);
+    const [error,setError] = useState('');
+
+    useEffect(() => {
+        apiCalls.getCities().then(data => {
+            setCities(data);
+        }).catch( err => {
+            setError(err.message)
+        })
+    }, []);
 
     const { t } = useTranslation();
 
@@ -11,78 +24,20 @@ const TrendingCities = () => {
             <TrendingCitiesTitle>{t('trendingCities_title')}</TrendingCitiesTitle>
             <TrendingCitiesText>{t('trendingCities_text')}</TrendingCitiesText>
             <TrendingCitiesCards>
-                <TrendingCitiesCard>
-                    <CityInTradeImage src="/assets/img/trendingCity.png"/>
+                {cities.map(e => (
+                    <TrendingCitiesCard>
+                    <CityInTradeImage src={`assets/img/${e.photo}`}/>
                     <TrendingCityTexts>
-                        <TrendCityName>{t('trendingCities_name1')}</TrendCityName>
+                        <TrendCityName>{e.name}</TrendCityName>
                         <TrendCityStar>
                             <img src="/assets/img/star.svg"/>
-                            <TCStars>4.91 <TCStarCounts>(147)</TCStarCounts> </TCStars>
+                            <TCStars>{e.rating}</TCStars>
                         </TrendCityStar>
-                        <TCPay>$250.00<TCForNight>{t('forNight')}</TCForNight></TCPay>
+                        <TCPay>${e.price}<TCForNight>{t('forNight')}</TCForNight></TCPay>
                         <Booking type="button">{t('bookButton')}</Booking>
                     </TrendingCityTexts>
                 </TrendingCitiesCard>
-                <TrendingCitiesCard>
-                    <CityInTradeImage src="/assets/img/trendingCity2.png"/>
-                    <TrendingCityTexts>
-                        <TrendCityName>{t('trendingCities_name2')}</TrendCityName>
-                        <TrendCityStar>
-                            <img src="/assets/img/star.svg"/>
-                            <TCStars>4.91 <TCStarCounts>(147)</TCStarCounts> </TCStars>
-                        </TrendCityStar>
-                        <TCPay>$250.00<TCForNight>{t('forNight')}</TCForNight></TCPay>
-                        <Booking type="button">{t('bookButton')}</Booking>
-                    </TrendingCityTexts>
-                </TrendingCitiesCard>
-                <TrendingCitiesCard>
-                    <CityInTradeImage src="/assets/img/trendingCity3.png"/>
-                    <TrendingCityTexts>
-                        <TrendCityName>{t('trendingCities_name3')}</TrendCityName>
-                        <TrendCityStar>
-                            <img src="/assets/img/star.svg"/>
-                            <TCStars>4.91 <TCStarCounts>(147)</TCStarCounts> </TCStars>
-                        </TrendCityStar>
-                        <TCPay>$250.00<TCForNight>{t('forNight')}</TCForNight></TCPay>
-                        <Booking type="button">{t('bookButton')}</Booking>
-                    </TrendingCityTexts>
-                </TrendingCitiesCard>
-                <TrendingCitiesCard>
-                    <CityInTradeImage src="/assets/img/trendingCity4.png"/>
-                    <TrendingCityTexts>
-                        <TrendCityName>{t('trendingCities_name4')}</TrendCityName>
-                        <TrendCityStar>
-                            <img src="/assets/img/star.svg"/>
-                            <TCStars>4.91 <TCStarCounts>(147)</TCStarCounts> </TCStars>
-                        </TrendCityStar>
-                        <TCPay>$250.00<TCForNight>{t('forNight')}</TCForNight></TCPay>
-                        <Booking type="button">{t('bookButton')}</Booking>
-                    </TrendingCityTexts>
-                </TrendingCitiesCard>
-                <TrendingCitiesCard>
-                    <CityInTradeImage src="/assets/img/trendingCity5.png"/>
-                    <TrendingCityTexts>
-                        <TrendCityName>{t('trendingCities_name5')}</TrendCityName>
-                        <TrendCityStar>
-                            <img src="/assets/img/star.svg"/>
-                            <TCStars>4.91 <TCStarCounts>(147)</TCStarCounts> </TCStars>
-                        </TrendCityStar>
-                        <TCPay>$250.00<TCForNight>{t('forNight')}</TCForNight></TCPay>
-                        <Booking type="button">{t('bookButton')}</Booking>
-                    </TrendingCityTexts>
-                </TrendingCitiesCard>
-                <TrendingCitiesCard>
-                    <CityInTradeImage src="/assets/img/trendingCity6.png"/>
-                    <TrendingCityTexts>
-                        <TrendCityName>{t('trendingCities_name6')}</TrendCityName>
-                        <TrendCityStar>
-                            <img src="/assets/img/star.svg"/>
-                            <TCStars>4.91 <TCStarCounts>(147)</TCStarCounts> </TCStars>
-                        </TrendCityStar>
-                        <TCPay>$250.00<TCForNight>{t('forNight')}</TCForNight></TCPay>
-                        <Booking type="button">{t('bookButton')}</Booking>
-                    </TrendingCityTexts>
-                </TrendingCitiesCard>
+                ))}
             </TrendingCitiesCards>
             </Container>
         </TrendingCitiesSection>
