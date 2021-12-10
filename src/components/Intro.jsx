@@ -10,11 +10,14 @@ import { FaPlaneDeparture } from 'react-icons/fa';
 import { BsPlusLg } from 'react-icons/bs';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { AiFillCar } from 'react-icons/ai';
+import { Navigate, useNavigate } from 'react-router-dom';
 import React from 'react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 
 const Intro = () => {
+
+    let history = useNavigate();
 
     const { t } = useTranslation();
 
@@ -22,6 +25,10 @@ const Intro = () => {
     const [child, setChild] = useState(0);
     const [city, setCity] = useState('')
     const [infat, setInfat] = useState(0);
+
+    const dateIn = useRef(null);
+    const state = useRef(null);
+    const dateOut = useRef(null);
 
     const total = user + child + infat;
 
@@ -47,6 +54,14 @@ const Intro = () => {
         { value: "Uzbekistan", label: "Uzbekistan" },
         { value: "Italy", label: "Italy" },
     ];
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        history('/hotellist');
+        console.log(state.current.value);
+        console.log(dateIn.current.value);
+        console.log(dateOut.current.value);
+    }
 
     const handleCities = (newValue) => {
         setCity(newValue.value)
@@ -113,16 +128,17 @@ const Intro = () => {
                     <div>
                         <SearchCard>
                             <SearchCardName>Location</SearchCardName>
-                            <Select options={cities} placeholder="Where are you from?" onClick={handleCities}></Select>
+                            <Select options={cities} placeholder="Where are you from?" onClick={handleCities} ref={state}></Select>
                         </SearchCard>
                         <SearchCard>
                             <SearchCardName>Check in</SearchCardName>
-                            <CheckInp type="date" />
+                            <CheckInp type="date" ref={dateIn}/>
                         </SearchCard>
                         <SearchCard>
                             <SearchCardName>Check out</SearchCardName>
-                            <CheckInp type="date" />
+                            <CheckInp type="date" ref={dateOut}/>
                         </SearchCard>
+                        <button type="button" onClick={handleSearch}>Search</button>
                     </div>
                 </Form>
             </Container>

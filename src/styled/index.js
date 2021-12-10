@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 // export const Button = styled.button`
 //     border: none;
@@ -405,7 +406,7 @@ export const BestPlaceCard = styled.div`
     transition: all 500ms ease-in-out;
     &:hover {
         background-color: ${(props) => props.theme.hoverBg};
-        box-shadow: ${(props) => props.theme.boxShadow};
+        border: ${(props) => props.theme.hoverBg};
     }
 `;
 
@@ -417,7 +418,7 @@ export const BestPlaceImage = styled.img`
 
 export const BestPlaceName = styled.h4`
     margin-top: 18px;
-    font-size: 20px;
+    font-size: 19px;
     line-height: 26px;
     font-weight: 700;
     font-family: 'DM Sans',sans-serif;
@@ -844,6 +845,10 @@ export const PassionSection = styled.section`
     background-color: ${(props) => props.theme.backgroundColor};
     padding-bottom: 215px;
     padding-top: 70px;
+`;
+
+export const LinkToHome = styled(Link)`
+    text-decoration: none;
 `;
 
 export const PassionTitle = styled.h2`

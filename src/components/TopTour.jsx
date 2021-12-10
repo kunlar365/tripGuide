@@ -46,7 +46,7 @@ const TopTour = () => {
                     }} style={{ marginTop: '70px', paddingBottom: '50px' }}>
 
                     {tour.map(e => (
-                        <SwiperSlide>
+                        <SwiperSlide key={e.id}>
                         <TopTourCard>
                             <img style={{borderRadius: '16px'}} src={`assets/img/${e.photo}`} alt="" />
                             <TopTourSpan>{e.name}</TopTourSpan>

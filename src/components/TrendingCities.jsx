@@ -25,7 +25,7 @@ const TrendingCities = () => {
             <TrendingCitiesText>{t('trendingCities_text')}</TrendingCitiesText>
             <TrendingCitiesCards>
                 {cities.map(e => (
-                    <TrendingCitiesCard>
+                    <TrendingCitiesCard key={e.id}>
                     <CityInTradeImage src={`assets/img/${e.photo}`}/>
                     <TrendingCityTexts>
                         <TrendCityName>{e.name}</TrendCityName>

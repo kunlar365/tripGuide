@@ -48,7 +48,7 @@ const Exploring = () => {
                     }} style={{ marginTop: '70px', paddingBottom: '50px' }}>
                     
                     {explore.map(e => (
-                        <SwiperSlide>
+                        <SwiperSlide key={e.id}>
                         <ExploreCard>
                             <ExploringImage src={`assets/img/${e.image}`} alt="" />
                             <TrendCityStar>
