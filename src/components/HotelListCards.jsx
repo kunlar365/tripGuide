@@ -33,7 +33,7 @@ const HotelListCards = () => {
 
     const handleSubmit = (el) => {
         el.preventDefault()
-        History('/hoteldetailes')
+        History(`/hoteldetailes/${el.id}`)
     }
     //{t('viewAll')}
     return (

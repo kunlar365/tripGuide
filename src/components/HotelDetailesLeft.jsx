@@ -16,12 +16,36 @@ import HotelDetailesAside from '../components/HotelDetailesAside';
 import { BiWifi } from 'react-icons/bi';
 import { useTranslation } from 'react-i18next';
 import 'react-tabs/style/react-tabs.css';
+import { useState } from 'react';
+import { useParams } from 'react-router';
+import { useEffect } from 'react';
+import apiCalls from '../config/api';
 
 const HotelDetailesLeft = () => {
 
+    const [hotelInfo, setHotelInfo] = useState({});
+    const [error, setError] = useState('');
+
+    const { id } = useParams();
+    useEffect(() => {
+        apiCalls.getHotelDetail(id).then(data => {
+            setHotelInfo(data);
+        }).catch(err => {
+            setError(err.message)
+        })
+    })
+
+    // useEffect(() => {
+    //     apiCalls.getExplore().then(data => {
+    //         setExplore(data);
+    //     }).catch( err => {
+    //         setError(err.message)
+    //     })
+    // }, []);
+
     const { t } = useTranslation();
     //{t('moreDetailes')}
-    
+
     return (
         <HotelDetailesSection>
             <HotelDetailesContainer>

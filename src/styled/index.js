@@ -257,8 +257,18 @@ export const IntroFilterDiv = styled.div`
     height: 205px;
     border-radius: 20px;
     box-shadow: 0px 12px 60px rgb(89 89 89 / 10%);
-    padding: 60px 30px;
+    padding: 22px 30px;
     width: 1170px;
+`;
+
+export const SearchBtn = styled.button`
+    background: #3B71FE;
+    border-radius: 10px;
+    padding: 22px 42px;
+    font-size: 20px;
+    margin-left: 35px;
+    color: #FFFFFF;
+    border: none;
 `;
 
 export const Passenger = styled.div`
@@ -280,7 +290,7 @@ export const Content = styled.div`
 `;
 
 export const Form = styled.form`
-    margin-top: 28px;
+    margin-top: 15px;
 `;
 
 export const SearchCard = styled.div`
@@ -350,7 +360,7 @@ export const SearchCardName = styled.label`
 `;
 
 export const CheckInp = styled.input`
-    width: 200px;
+    width: 100%;
     border: none;
     outline: none;
     background-color: transparent;

@@ -15,7 +15,7 @@ const HotelPaymentAside = () => {
                     <img src="/assets/img/star.svg" style={{ marginRight: '12px' }} />
                     <HotelDetailesText>4.8 <ZuichReviews>{t('zuichReviews')}</ZuichReviews> </HotelDetailesText>
                 </AsideReviews>
-                <AsideImg src="/assets/img/hotelPaymentAside.png" alt="" />
+                <AsideImg src="/assets/img/hotelPaymentAside.jpg" alt="" />
                 <BedroomPrivateRoom>{t('bedroomPrivate')}</BedroomPrivateRoom>
                 <CheckInDiv>
                     <div>

@@ -1,5 +1,5 @@
 import { t } from 'i18next';
-import { Container, IntroTitle, IntroSection, SearchCardName, CheckInp, SearchCard, IntroFilterDiv, SearchRow, UserCount, Passenger, Content, Sum, ContentText, ContentAge, ContentBtn, Form } from '../styled';
+import { Container, MainHeader, SearchBtn, IntroTitle, IntroSection, SearchCardName, CheckInp, SearchCard, IntroFilterDiv, SearchRow, UserCount, Passenger, Content, Sum, ContentText, ContentAge, ContentBtn, Form } from '../styled';
 import { useTranslation } from 'react-i18next';
 import { Tab, Tabs, TabList } from 'react-tabs';
 import { Reservation } from '../styled'
@@ -122,10 +122,8 @@ const Intro = () => {
                             </Content>
                         </Passenger>
                     </SearchRow>
-                </IntroFilterDiv>
-
                 <Form>
-                    <div>
+                    <MainHeader>
                         <SearchCard>
                             <SearchCardName>Location</SearchCardName>
                             <Select options={cities} placeholder="Where are you from?" onClick={handleCities} ref={state}></Select>
@@ -138,9 +136,11 @@ const Intro = () => {
                             <SearchCardName>Check out</SearchCardName>
                             <CheckInp type="date" ref={dateOut}/>
                         </SearchCard>
-                        <button type="button" onClick={handleSearch}>Search</button>
-                    </div>
+                        <SearchBtn type="button" onClick={handleSearch}>Search</SearchBtn>
+                    </MainHeader>
                 </Form>
+                </IntroFilterDiv>
+
             </Container>
         </IntroSection>
     );
