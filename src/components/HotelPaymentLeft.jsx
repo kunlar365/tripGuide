@@ -104,7 +104,7 @@ const HotelPaymentLeft = () => {
                         </div>
                     </CardsExpiryDiv>
                     <SaveCardDiv>
-                        <input type="checkbox" style={{width: '24px',height: '23px'}}/>
+                        <input type="checkbox" style={{width: '24px',height: '23px'}} value="Save card" onChange={e => console.log(e.target.value)} />
                         <SaveCardText>{t('saveCard')}</SaveCardText>
                     </SaveCardDiv>
                 </div>

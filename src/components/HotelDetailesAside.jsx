@@ -65,28 +65,28 @@ const HotelDetailesAside = () => {
             <div>
                 <PropertyTypeDiv>
                     <PropertyDiv>
-                        <Form.Check aria-label="Allow to bring pet" style={{ marginRight: '12px' }} />
+                        <Form.Check aria-label="Allow to bring pet" style={{ marginRight: '12px' }} value="Allow to bring pet" onChange={e => console.log(e.target.value)}  />
                         <PopularFilterTexts>{t('allowToBringPet')}</PopularFilterTexts>
                     </PropertyDiv>
                     <NumbersText>$13</NumbersText>
                 </PropertyTypeDiv>
                 <PropertyTypeDiv>
                     <PropertyDiv>
-                        <Form.Check aria-label="Breakfast a day per person" style={{ marginRight: '12px' }} />
+                        <Form.Check aria-label="Breakfast a day per person" style={{ marginRight: '12px' }} value="Breakfast a day per person" onChange={e => console.log(e.target.value)}  />
                         <PopularFilterTexts>{t('breakfastPerson')}</PopularFilterTexts>
                     </PropertyDiv>
                     <NumbersText>$10</NumbersText>
                 </PropertyTypeDiv>
                 <PropertyTypeDiv>
                     <PropertyDiv>
-                        <Form.Check aria-label="Parking a day" style={{ marginRight: '12px' }} />
+                        <Form.Check aria-label="Parking a day" style={{ marginRight: '12px' }} value="Parking a day" onChange={e => console.log(e.target.value)}  />
                         <PopularFilterTexts>{t('parkingDay')}</PopularFilterTexts>
                     </PropertyDiv>
                     <NumbersText>$6</NumbersText>
                 </PropertyTypeDiv>
                 <PropertyTypeDiv>
                     <PropertyDiv>
-                        <Form.Check aria-label="Extra pillow" style={{ marginRight: '12px' }} />
+                        <Form.Check aria-label="Extra pillow" style={{ marginRight: '12px' }} value="Extra pillow" onChange={e => console.log(e.target.value)}  />
                         <PopularFilterTexts>{t('extraPillow')}</PopularFilterTexts>
                     </PropertyDiv>
                     <NumbersText>{t('free')}</NumbersText>

@@ -88,7 +88,8 @@ export const DarkTheme = {
     inpBg: "#3B3E44",
     inpBorder: "#4A4E54",
     btnColor: "#FCFCFD",
-    rangeNumber: "#316BFF"
+    rangeNumber: "#316BFF",
+    activedLink: "#84878B"
 };
 
 export const LightTheme = {
@@ -161,10 +162,11 @@ export const LightTheme = {
     inpBg: "#f4f5f7",
     inpBorder: "#E7E8EA",
     btnColor: "#3B3E44",
-    rangeNumber: "#0A2541"
+    rangeNumber: "#0A2541",
+    activedLink: "#B1B5C3"
 };
 
-// ${(props) => props.theme.rangeNumber}
+// ${(props) => props.theme.activedLink}
 
 // Header
 
@@ -1061,8 +1063,31 @@ export const HotelListComponents = styled.div`
 
 export const HotelListSection = styled.section`
     background-color: ${(props) => props.theme.hotelListSecBg};
-    padding-top: 185px;
+    padding-top: 40px;
     padding-bottom: 200px;
+`;
+
+export const Links = styled(Link)`
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    font-family: 'DM Sans';
+    color: ${(props) => props.theme.bestPlaceTitle};
+    text-decoration: none;
+`;
+
+export const ActivedLink = styled(Link)`
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-decoration: none;
+    font-family: 'DM Sans';
+    color: ${(props) => props.theme.activedLink};
+`;
+
+export const LinksDiv = styled.div`
+    padding-bottom: 70px;
+    padding-top: 50px;
 `;
 
 export const HotelDetailesSection = styled.section`
@@ -1484,10 +1509,9 @@ export const HotelDetaileAside = styled.div`
 `;
 
 export const HotelDetailesComponents = styled.div`
-    display: flex;
+    // display: flex;
     width: 1240px;
     margin: 0 auto;
-    padding-top: 70px;
 `;
 
 export const HotelPaymentComponents = styled.div`

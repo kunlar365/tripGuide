@@ -1,14 +1,16 @@
 import Aside from "../components/Aside";
 import Header from "../components/Header";
 import HotelListCards from "../components/HotelListCards";
-import { Container, MainHeader, SearchBtn, SearchCardName, CheckInp, SearchCard, IntroFilterDiv, SearchRow, UserCount, Passenger, Content, Sum, ContentText, ContentAge, ContentBtn, Form } from '../styled';
+import { Container, MainHeader, SearchBtn, LinksDiv, ActivedLink, Links, SearchCardName, CheckInp, SearchCard, IntroFilterDiv, SearchRow, UserCount, Passenger, Content, Sum, ContentText, ContentAge, ContentBtn, Form } from '../styled';
 import { HotelListSection, HotelListComponents } from "../styled";
 import { useState, useRef } from 'react';
 import Select from 'react-select';
 import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { FaPlaneDeparture } from 'react-icons/fa';
+import { AiOutlineRight } from 'react-icons/ai';
 import { BsPlusLg } from 'react-icons/bs';
+import { Link } from "react-router-dom";
 import { AiOutlineMinus } from 'react-icons/ai';
 
 const HotelList = () => {
@@ -63,6 +65,11 @@ const HotelList = () => {
     return (
         <HotelListSection>
             <Container>
+            <LinksDiv>
+                <Links to={`/`}>Home</Links>
+                <AiOutlineRight/>
+                <ActivedLink to={`/hotellist`}>Hotel List</ActivedLink>
+            </LinksDiv>
                 <IntroFilterDiv>
                     <SearchRow>
                         <Passenger>
