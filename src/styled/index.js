@@ -89,7 +89,8 @@ export const DarkTheme = {
     inpBorder: "#4A4E54",
     btnColor: "#FCFCFD",
     rangeNumber: "#316BFF",
-    activedLink: "#84878B"
+    activedLink: "#84878B",
+    arrowDiv: '#42464B'
 };
 
 export const LightTheme = {
@@ -163,10 +164,11 @@ export const LightTheme = {
     inpBorder: "#E7E8EA",
     btnColor: "#3B3E44",
     rangeNumber: "#0A2541",
-    activedLink: "#B1B5C3"
+    activedLink: "#B1B5C3",
+    arrowDiv: '#fff'
 };
 
-// ${(props) => props.theme.activedLink}
+// ${(props) => props.theme.arrowDiv}
 
 // Header
 
@@ -232,6 +234,7 @@ export const MainHeader =styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 `;
 
 // Intro
@@ -1506,6 +1509,18 @@ export const MoreDetailes = styled.button`
 
 export const HotelDetaileAside = styled.div`
     border: 1px solid ${(props) => props.theme.detailAsideBorder};
+`;
+
+export const ArrowDiv = styled.div`
+    background-color: ${(props) => props.theme.arrowDiv};
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    width: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 30px;
 `;
 
 export const HotelDetailesComponents = styled.div`

@@ -9,9 +9,9 @@ const HotelDetailes = () => {
             <HotelDetailesComponents>
                 <LinksDiv>
                     <Links to={`/`}>Home</Links>
-                    <AiOutlineRight />
+                    <AiOutlineRight style={{marginLeft: '7px', marginRight: '10px',width: '6px',height: '10px'}} />
                     <Links to={`/hotellist`}>Hotel List</Links>
-                    <AiOutlineRight />
+                    <AiOutlineRight style={{marginLeft: '7px', marginRight: '10px',width: '6px',height: '10px'}} />
                     <ActivedLink to={`/hoteldetailes/:id`}>Hotel Detailes</ActivedLink>
                 </LinksDiv>
                 <HotelDetailesLeft />

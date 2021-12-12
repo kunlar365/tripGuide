@@ -9,13 +9,13 @@ const HotelCongrutulations = () => {
                 <HotelDetailesContainer>
                 <LinksDiv>
                     <Links to={`/`}>Home</Links>
-                    <AiOutlineRight />
+                    <AiOutlineRight style={{marginLeft: '7px', marginRight: '10px',width: '6px',height: '10px'}} />
                     <Links to={`/hotellist`}>Hotel List</Links>
-                    <AiOutlineRight />
+                    <AiOutlineRight style={{marginLeft: '7px', marginRight: '10px',width: '6px',height: '10px'}} />
                     <Links to={`/hoteldetailes/:id`}>Hotel Detailes</Links>
-                    <AiOutlineRight />
+                    <AiOutlineRight style={{marginLeft: '7px', marginRight: '10px',width: '6px',height: '10px'}} />
                     <Links to={`/hotelpayment`}>Confirm and pay</Links>
-                    <AiOutlineRight />
+                    <AiOutlineRight style={{marginLeft: '7px', marginRight: '10px',width: '6px',height: '10px'}} />
                     <ActivedLink to={`/hotelcongrutulations`}>Congratulations</ActivedLink>
                 </LinksDiv>
                     <Congrutulations/>

@@ -67,7 +67,7 @@ const HotelList = () => {
             <Container>
             <LinksDiv>
                 <Links to={`/`}>Home</Links>
-                <AiOutlineRight/>
+                <AiOutlineRight style={{marginLeft: '7px', marginRight: '10px',width: '6px',height: '10px'}}/>
                 <ActivedLink to={`/hotellist`}>Hotel List</ActivedLink>
             </LinksDiv>
                 <IntroFilterDiv>

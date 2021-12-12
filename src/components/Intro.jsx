@@ -1,5 +1,5 @@
 import { t } from 'i18next';
-import { Container, MainHeader, SearchBtn, IntroTitle, IntroSection, SearchCardName, CheckInp, SearchCard, IntroFilterDiv, SearchRow, UserCount, Passenger, Content, Sum, ContentText, ContentAge, ContentBtn, Form } from '../styled';
+import { Container, MainHeader, SearchBtn, ArrowDiv, IntroTitle, IntroSection, SearchCardName, CheckInp, SearchCard, IntroFilterDiv, SearchRow, UserCount, Passenger, Content, Sum, ContentText, ContentAge, ContentBtn, Form } from '../styled';
 import { useTranslation } from 'react-i18next';
 import { Tab, Tabs, TabList } from 'react-tabs';
 import { Reservation } from '../styled'
@@ -11,6 +11,7 @@ import { BsPlusLg } from 'react-icons/bs';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { AiFillCar } from 'react-icons/ai';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { BsArrowLeftRight } from 'react-icons/bs'
 import React from 'react'
 import { useState, useRef } from 'react'
 
@@ -130,10 +131,16 @@ const Intro = () => {
                             <SearchCardName>{t('location')}</SearchCardName>
                             <Select options={cities} placeholder={t('whereFrom')} onClick={handleCities} ref={state}></Select>
                         </SearchCard>
+                        <ArrowDiv style={{left: '334px',zIndex: '10'}}>
+                            <BsArrowLeftRight/>
+                        </ArrowDiv>
                         <SearchCard>
                             <SearchCardName>{t('checkin')}</SearchCardName>
                             <CheckInp type="date" ref={dateIn}/>
                         </SearchCard>
+                        <ArrowDiv style={{left: '625px',zIndex: '10'}}>
+                            <BsArrowLeftRight/>
+                        </ArrowDiv>
                         <SearchCard>
                             <SearchCardName>{t('checkout')}</SearchCardName>
                             <CheckInp type="date" ref={dateOut}/>

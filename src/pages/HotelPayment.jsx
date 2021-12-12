@@ -9,11 +9,11 @@ const HotelPayment = () => {
                 <HotelDetailesContainer>
                 <LinksDiv>
                     <Links to={`/`}>Home</Links>
-                    <AiOutlineRight />
+                    <AiOutlineRight style={{marginLeft: '7px', marginRight: '10px',width: '6px',height: '10px'}}/>
                     <Links to={`/hotellist`}>Hotel List</Links>
-                    <AiOutlineRight />
+                    <AiOutlineRight style={{marginLeft: '7px', marginRight: '10px',width: '6px',height: '10px'}} />
                     <Links to={`/hoteldetailes/:id`}>Hotel Detailes</Links>
-                    <AiOutlineRight />
+                    <AiOutlineRight style={{marginLeft: '7px', marginRight: '10px',width: '6px',height: '10px'}} />
                     <ActivedLink to={`/hotelpayment`}>Confirm and pay</ActivedLink>
                 </LinksDiv>
                     <HotelPaymentComponents>
