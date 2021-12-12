@@ -184,5 +184,20 @@
     "30April": "30 Apr, 2021",
     "payment": "Payment method",
     "creditCard": "Creadit card",
-    "goToHome": "Go To Your Home"
+    "goToHome": "Go To Your Home",
+    "location": "Location",
+    "checkin": "Check in",
+    "checkout": "Check out",
+    "search": "Search",
+    "whereFrom": "Where are you from?",
+    "passenger": "Passenger",
+    "hotel": "Hotel",
+    "flight": "Flight",
+    "carREntal": "Car Rental",
+    "adult": "Adult",
+    "adultAge": "Adult Age",
+    "child": "Child",
+    "childAge": "Child Age",
+    "infant": "Infant",
+    "infantAge": "Infant Age"
 }

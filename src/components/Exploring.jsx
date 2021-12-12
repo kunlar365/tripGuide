@@ -6,25 +6,56 @@ import SwiperCore, { Navigation } from 'swiper';
 import { useEffect, useState } from 'react';
 import apiCalls from '../config/api';
 import { IoIosArrowBack } from 'react-icons/io';
+import Loader from './Loader';
 import { IoIosArrowForward } from 'react-icons/io';
 import { useTranslation } from 'react-i18next';
 
 const Exploring = () => {
 
-    const [explore,setExplore] = useState([]);
-    const [error,setError] = useState('');
+    const [explore, setExplore] = useState([]);
+    const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        apiCalls.getExplore().then(data => {
-            setExplore(data);
-        }).catch( error => {
-            setError(error.message)
-        })
+        setTimeout(() => {
+            apiCalls.getExplore().then(data => {
+                setExplore(data);
+                setIsLoading(false);
+            }).catch(error => {
+                setError(error.message)
+            })
+        }, 10000)
     }, []);
 
     SwiperCore.use([Navigation]);
 
     const { t } = useTranslation();
+
+    const content = isLoading ? <Loader/> :
+        explore.map(e => (
+            <SwiperSlide key={e.id}>
+                <ExploreCard>
+                    <ExploringImage src={`assets/img/${e.image}`} alt="" />
+                    <TrendCityStar>
+                        <img src="/assets/img/star.svg" alt="star" />
+                        <TCStars>{e.rating}</TCStars>
+                    </TrendCityStar>
+                    <ComfortSpaceDiv>
+                        <ComfortSpace>{e.title}</ComfortSpace>
+                        <ComfortSpaceSpan>${e.price}</ComfortSpaceSpan>
+                    </ComfortSpaceDiv>
+                    <ToTown>{e.radius} to Town Center</ToTown>
+                    <IconsDiv>
+                        <HiOutlineLocationMarker style={{ color: '#B1B5C3', width: '22px', height: '27px' }} />
+                        <IconText>{e.location}</IconText>
+                    </IconsDiv>
+                    <IconsDiv>
+                        <FaHotel style={{ color: '#B1B5C3' }} />
+                        <IconText>Rooms available: {e.rooms}</IconText>
+                    </IconsDiv>
+                </ExploreCard>
+            </SwiperSlide>
+        ))
 
     return (
         <TopTourSection>
@@ -46,31 +77,8 @@ const Exploring = () => {
                         nextEl: '.my-button-next',
                         prevEl: '.my-button-prev',
                     }} style={{ marginTop: '70px', paddingBottom: '50px' }}>
-                    
-                    {explore.map(e => (
-                        <SwiperSlide key={e.id}>
-                        <ExploreCard>
-                            <ExploringImage src={`assets/img/${e.image}`} alt="" />
-                            <TrendCityStar>
-                                <img src="/assets/img/star.svg" alt="star" />
-                                <TCStars>{e.rating}</TCStars>
-                            </TrendCityStar>
-                            <ComfortSpaceDiv>
-                                <ComfortSpace>{e.title}</ComfortSpace>
-                                <ComfortSpaceSpan>${e.price}</ComfortSpaceSpan>
-                            </ComfortSpaceDiv>
-                            <ToTown>{e.radius} to Town Center</ToTown>
-                            <IconsDiv>
-                                <HiOutlineLocationMarker style={{ color: '#B1B5C3', width: '22px', height: '27px' }} />
-                                <IconText>{e.location}</IconText>
-                            </IconsDiv>
-                            <IconsDiv>
-                                <FaHotel style={{ color: '#B1B5C3' }} />
-                                <IconText>Rooms available: {e.rooms}</IconText>
-                            </IconsDiv>
-                        </ExploreCard>
-                    </SwiperSlide>
-                    ))}
+
+                    {content}
 
                 </Swiper>}
 

@@ -5,11 +5,15 @@ import { Container, MainHeader, SearchBtn, SearchCardName, CheckInp, SearchCard,
 import { HotelListSection, HotelListComponents } from "../styled";
 import { useState, useRef } from 'react';
 import Select from 'react-select';
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { FaPlaneDeparture } from 'react-icons/fa';
 import { BsPlusLg } from 'react-icons/bs';
 import { AiOutlineMinus } from 'react-icons/ai';
 
 const HotelList = () => {
+
+    const { t } = useTranslation();
 
     const [user, setUser] = useState(0);
     const [child, setChild] = useState(0);
@@ -62,67 +66,67 @@ const HotelList = () => {
                 <IntroFilterDiv>
                     <SearchRow>
                         <Passenger>
-                            <button onClick={hendleActive} type="button" className="total" style={{marginBottom: '20px'}} >{total} Passenger</button>
+                            <button onClick={hendleActive} type="button" className="total" style={{marginBottom: '20px'}}>{total} {t('passenger')}</button>
                             <Content className="content">
                                 <Sum>
                                     <div>
-                                        <ContentText>Adult</ContentText>
-                                        <ContentAge>Adult Age</ContentAge>
+                                        <ContentText>{t('adult')}</ContentText>
+                                        <ContentAge>{t('adultAge')}</ContentAge>
                                     </div>
                                     <div>
-                                        <ContentBtn  onClick={() => {setUser(user > 0 ? user - 1 : 0)}}><AiOutlineMinus/></ContentBtn>
+                                        <ContentBtn onClick={() => { setUser(user > 0 ? user - 1 : 0) }}><AiOutlineMinus /></ContentBtn>
                                         <UserCount>{user}</UserCount>
-                                        <ContentBtn  onClick={() => {setUser(user + 1)}}><BsPlusLg/></ContentBtn>
+                                        <ContentBtn onClick={() => { setUser(user + 1) }}><BsPlusLg /></ContentBtn>
                                     </div>
                                 </Sum>
                                 <Sum>
                                     <div>
-                                        <ContentText>Child</ContentText>
-                                        <ContentAge>Child Age</ContentAge>
+                                        <ContentText>{t('child')}</ContentText>
+                                        <ContentAge>{t('childAge')}</ContentAge>
                                     </div>
                                     <div>
-                                        <ContentBtn onClick={() => {setChild(child > 0 ? child - 1 : 0)}}><AiOutlineMinus/></ContentBtn>
+                                        <ContentBtn onClick={() => { setChild(child > 0 ? child - 1 : 0) }}><AiOutlineMinus /></ContentBtn>
                                         <UserCount>{child}</UserCount>
-                                        <ContentBtn onClick={() => {setChild(child + 1)}}><BsPlusLg/></ContentBtn>
+                                        <ContentBtn onClick={() => { setChild(child + 1) }}><BsPlusLg /></ContentBtn>
                                     </div>
                                 </Sum>
                                 <Sum>
                                     <div>
-                                        <ContentText>Infant</ContentText>
-                                        <ContentAge>Infant Age</ContentAge>
+                                        <ContentText>{t('infant')}</ContentText>
+                                        <ContentAge>{t('infantAge')}</ContentAge>
                                     </div>
                                     <div>
-                                        <ContentBtn onClick={() => {setInfat(infat > 0 ? infat - 1 : 0)}}><AiOutlineMinus/></ContentBtn>
+                                        <ContentBtn onClick={() => { setInfat(infat > 0 ? infat - 1 : 0) }}><AiOutlineMinus /></ContentBtn>
                                         <UserCount>{infat}</UserCount>
-                                        <ContentBtn onClick={() => {setInfat(infat + 1)}}><BsPlusLg/></ContentBtn>
+                                        <ContentBtn onClick={() => { setInfat(infat + 1) }}><BsPlusLg /></ContentBtn>
                                     </div>
                                 </Sum>
 
                             </Content>
                         </Passenger>
                     </SearchRow>
-                <Form>
-                    <MainHeader>
-                        <SearchCard>
-                            <SearchCardName>Location</SearchCardName>
-                            <Select options={cities} placeholder="Where are you from?" onClick={handleCities} ref={state}></Select>
-                        </SearchCard>
-                        <SearchCard>
-                            <SearchCardName>Check in</SearchCardName>
-                            <CheckInp type="date" ref={dateIn}/>
-                        </SearchCard>
-                        <SearchCard>
-                            <SearchCardName>Check out</SearchCardName>
-                            <CheckInp type="date" ref={dateOut}/>
-                        </SearchCard>
-                        <SearchBtn type="button" onClick={handleSearch}>Search</SearchBtn>
-                    </MainHeader>
-                </Form>
+                    <Form>
+                        <MainHeader>
+                            <SearchCard>
+                                <SearchCardName>{t('location')}</SearchCardName>
+                                <Select options={cities} placeholder={t('whereFrom')} onClick={handleCities} ref={state}></Select>
+                            </SearchCard>
+                            <SearchCard>
+                                <SearchCardName>{t('checkin')}</SearchCardName>
+                                <CheckInp type="date" ref={dateIn} />
+                            </SearchCard>
+                            <SearchCard>
+                                <SearchCardName>{t('checkout')}</SearchCardName>
+                                <CheckInp type="date" ref={dateOut} />
+                            </SearchCard>
+                            <SearchBtn type="button" onClick={handleSearch}>{t('search')}</SearchBtn>
+                        </MainHeader>
+                    </Form>
                 </IntroFilterDiv>
             </Container>
             <HotelListComponents>
-                <Aside/>
-                <HotelListCards/>
+                <Aside />
+                <HotelListCards />
             </HotelListComponents>
         </HotelListSection>
     )

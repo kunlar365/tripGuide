@@ -68,6 +68,8 @@ const Intro = () => {
         console.log(newValue.value)
     }
 
+     // {t('infantAge')}
+
     return (
         <IntroSection>
             <Container>
@@ -77,18 +79,18 @@ const Intro = () => {
                     <SearchRow>
                         <Tabs>
                             <TabList>
-                                <Tab><Reservation><MdHotel />Hotel</Reservation></Tab>
-                                <Tab><Reservation><FaPlaneDeparture />Flight</Reservation></Tab>
-                                <Tab><Reservation><AiFillCar />Car Rental</Reservation></Tab>
+                                <Tab><Reservation><MdHotel />{t('hotel')}</Reservation></Tab>
+                                <Tab><Reservation><FaPlaneDeparture />{t('flight')}</Reservation></Tab>
+                                <Tab><Reservation><AiFillCar />{t('carREntal')}</Reservation></Tab>
                             </TabList>
                         </Tabs>
                         <Passenger>
-                            <button onClick={hendleActive} type="button" className="total">{total} Passenger</button>
+                            <button onClick={hendleActive} type="button" className="total">{total} {t('passenger')}</button>
                             <Content className="content">
                                 <Sum>
                                     <div>
-                                        <ContentText>Adult</ContentText>
-                                        <ContentAge>Adult Age</ContentAge>
+                                        <ContentText>{t('adult')}</ContentText>
+                                        <ContentAge>{t('adultAge')}</ContentAge>
                                     </div>
                                     <div>
                                         <ContentBtn  onClick={() => {setUser(user > 0 ? user - 1 : 0)}}><AiOutlineMinus/></ContentBtn>
@@ -98,8 +100,8 @@ const Intro = () => {
                                 </Sum>
                                 <Sum>
                                     <div>
-                                        <ContentText>Child</ContentText>
-                                        <ContentAge>Child Age</ContentAge>
+                                        <ContentText>{t('child')}</ContentText>
+                                        <ContentAge>{t('childAge')}</ContentAge>
                                     </div>
                                     <div>
                                         <ContentBtn onClick={() => {setChild(child > 0 ? child - 1 : 0)}}><AiOutlineMinus/></ContentBtn>
@@ -109,8 +111,8 @@ const Intro = () => {
                                 </Sum>
                                 <Sum>
                                     <div>
-                                        <ContentText>Infant</ContentText>
-                                        <ContentAge>Infant Age</ContentAge>
+                                        <ContentText>{t('infant')}</ContentText>
+                                        <ContentAge>{t('infantAge')}</ContentAge>
                                     </div>
                                     <div>
                                         <ContentBtn onClick={() => {setInfat(infat > 0 ? infat - 1 : 0)}}><AiOutlineMinus/></ContentBtn>
@@ -125,18 +127,18 @@ const Intro = () => {
                 <Form>
                     <MainHeader>
                         <SearchCard>
-                            <SearchCardName>Location</SearchCardName>
-                            <Select options={cities} placeholder="Where are you from?" onClick={handleCities} ref={state}></Select>
+                            <SearchCardName>{t('location')}</SearchCardName>
+                            <Select options={cities} placeholder={t('whereFrom')} onClick={handleCities} ref={state}></Select>
                         </SearchCard>
                         <SearchCard>
-                            <SearchCardName>Check in</SearchCardName>
+                            <SearchCardName>{t('checkin')}</SearchCardName>
                             <CheckInp type="date" ref={dateIn}/>
                         </SearchCard>
                         <SearchCard>
-                            <SearchCardName>Check out</SearchCardName>
+                            <SearchCardName>{t('checkout')}</SearchCardName>
                             <CheckInp type="date" ref={dateOut}/>
                         </SearchCard>
-                        <SearchBtn type="button" onClick={handleSearch}>Search</SearchBtn>
+                        <SearchBtn type="button" onClick={handleSearch}>{t('search')}</SearchBtn>
                     </MainHeader>
                 </Form>
                 </IntroFilterDiv>

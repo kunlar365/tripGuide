@@ -184,5 +184,20 @@
     "30April": "30 aprel, 2021 yil",
     "payment": "To'lov usuli",
     "creditCard": "Kredit karta",
-    "goToHome": "Uyingizga boring"
+    "goToHome": "Uyingizga boring",
+    "location": "Manzil",
+    "checkin": "Belgilanish",
+    "checkout": "Tekshirib ko'rmoq",
+    "search": "Qidirmoq",
+    "whereFrom": "Qayerliksiz?",
+    "passenger": "Yo'lovchi",
+    "hotel": "Mehmonxona",
+    "flight": "Parvoz",
+    "carREntal": "Avtomobil ijarasi",
+    "adult": "Voyaga etgan",
+    "adultAge": "Kattalar yoshi",
+    "child": "Bola",
+    "childAge": "Bola yoshi",
+    "infant": "Chaqaloq",
+    "infantAge": "Chaqaloq yoshi"
 }
