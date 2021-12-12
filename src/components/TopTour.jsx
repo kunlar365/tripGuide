@@ -16,8 +16,8 @@ const TopTour = () => {
     useEffect(() => {
         apiCalls.getTours().then(data => {
             setTour(data);
-        }).catch( err => {
-            setError(err.message)
+        }).catch( error => {
+            setError(error.message)
         })
     }, []);
 
@@ -38,7 +38,8 @@ const TopTour = () => {
                         <button type="button" className="my-swiper-button-next" style={{ color: "#84878b", width: 38, height: 38, borderRadius: '50%', border: 'none'  }} ><IoIosArrowForward /></button>
                     </div>
                 </SwiperSliderDiv>
-                <Swiper
+                
+                {!error && <Swiper
                     slidesPerView={3} spaceBetween={30}
                     modules={[Navigation]} navigation={{
                         nextEl: '.my-swiper-button-next',
@@ -58,7 +59,11 @@ const TopTour = () => {
                     </SwiperSlide>
                     ))}
 
-                </Swiper>
+                </Swiper>}
+
+                {error && <div>{error}</div>}
+
+
             </Container>
         </TopTourSection>
     );

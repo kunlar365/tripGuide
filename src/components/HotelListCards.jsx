@@ -12,9 +12,12 @@ import { BiLoaderCircle } from 'react-icons/bi';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import apiCalls from '../config/api';
-import { TPReview, TPCardText, Tower, HotelCard, LoadMoreButton, LoadMoreButtonDiv, HotelDetailesText, ZuichImage, Zuich, ZuichReviews, PropertyDiv, HotelDetailesDiv, BookingButtons, BookingButton, PriceButton, PriceButtonSpan, Hotel } from '../styled'
+import { TPReview, TPCardText, LinkToDetailes, Tower, HotelCard, LoadMoreButton, LoadMoreButtonDiv, HotelDetailesText, ZuichImage, Zuich, ZuichReviews, PropertyDiv, HotelDetailesDiv, BookingButtons, BookingButton, PriceButton, PriceButtonSpan, Hotel } from '../styled'
 
 const HotelListCards = () => {
+    
+    let History = useNavigate();
+    const { t } = useTranslation();
 
     const [hotels,setHotels] = useState([]);
     const [error,setError] = useState('');
@@ -22,22 +25,17 @@ const HotelListCards = () => {
     useEffect(() => {
         apiCalls.getHotels().then(data => {
             setHotels(data);
-        }).catch( err => {
-            setError(err.message)
+        }).catch( error => {
+            setError(error.message)
         })
     }, []);
 
 
-    let History = useNavigate();
-    const { t } = useTranslation();
-
-    const handleSubmit = (el) => {
-        el.preventDefault()
-        History(`/hoteldetailes/${el.id}`)
-    }
+    
     //{t('viewAll')}
     return (
-        <div className="hotelsList">
+        <div>
+            {!error && <div className="hotelsList">
             {hotels.map(e => (
                 <HotelCard key={e.id}>
                 <ZuichImage style={{width: '420px'}} src={`assets/img/${e.photo}`} alt="" />
@@ -92,7 +90,7 @@ const HotelListCards = () => {
                     </HotelDetailesDiv>
                     <div className="buttons">
                         <PriceButton type="button">${e.price} <PriceButtonSpan>{t('forTwo')}</PriceButtonSpan> </PriceButton>
-                        <BookingButton onClick={handleSubmit} type="button">{t('bookNow')}</BookingButton>
+                        <LinkToDetailes to={`/hoteldetailes/${e.id}`}>{t('bookNow')}</LinkToDetailes>
                     </div>
                     </BookingButtons>
                 </Hotel>
@@ -103,6 +101,9 @@ const HotelListCards = () => {
             <LoadMoreButton><BiLoaderCircle style={{marginRight: '15px', width: '18px',height: '18px'}}/>{t('viewAll')}</LoadMoreButton>
 
             </LoadMoreButtonDiv>
+        </div>}
+
+        {error && <div>{error}</div>}
         </div>
     );
 };

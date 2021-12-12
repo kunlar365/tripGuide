@@ -79,7 +79,6 @@ body {
   color: #3B3E44;
   border: none;
   background: transparent;
-  margin-bottom: 27px;
 }
 
 .total.active+.content {
@@ -88,4 +87,9 @@ body {
 
 .total.active .icon-bottom {
   transform: rotate(180deg);
+}
+
+.css-1s2u09g-control {
+  background: transparent !important;
+  border: none !important;
 }

@@ -1,4 +1,4 @@
-import { DetailesTitle, DetailesFeatures, HotelDetailesSection, Towers, CheckingDivs, HotelDetailesContainer, MoreDetailes, DetailesIconsDiv, DetailesFeaturesDiv, DetailesIconText, DetailesIconDiv, ZuichDiv, DetailesText, DetailesZuich, HotelListSection, Tower, HotelDetailesText, ZuichReviews, DetailesImagesDiv, Spans, DetailesFirstImg, DetailesSecondImg, DetailesLastImg, Zuich, GreenSpan, YellowSpan, BlueSpan, PinkSpan, OrangeSpan } from '../styled';
+import { DetailesTitle, DetailesImage, DetailesFeatures, HotelDetailesSection, Towers, CheckingDivs, HotelDetailesContainer, MoreDetailes, DetailesIconsDiv, DetailesFeaturesDiv, DetailesIconText, DetailesIconDiv, ZuichDiv, DetailesText, DetailesZuich, HotelListSection, Tower, HotelDetailesText, ZuichReviews, DetailesImagesDiv, Spans, DetailesFirstImg, DetailesSecondImg, DetailesLastImg, Zuich, GreenSpan, YellowSpan, BlueSpan, PinkSpan, OrangeSpan } from '../styled';
 import { BsFlag } from 'react-icons/bs';
 // import { Tab, Tabs, Tablist } from 'react-tabs';
 import { Tab, Tabs, TabList } from 'react-tabs';
@@ -30,10 +30,12 @@ const HotelDetailesLeft = () => {
     useEffect(() => {
         apiCalls.getHotelDetail(id).then(data => {
             setHotelInfo(data);
-        }).catch(err => {
-            setError(err.message)
+        }).catch(error => {
+            setError(error.message)
         })
-    })
+    }, [id]);
+
+    // if(error && hotelInfo.length =) {}
 
     // useEffect(() => {
     //     apiCalls.getExplore().then(data => {
@@ -47,28 +49,22 @@ const HotelDetailesLeft = () => {
     //{t('moreDetailes')}
 
     return (
-        <HotelDetailesSection>
+        <div>
+            {!error && <HotelDetailesSection key={hotelInfo.id}>
             <HotelDetailesContainer>
-                <DetailesTitle>{t('hotelsAndPlaces')}</DetailesTitle>
+                <DetailesTitle>{hotelInfo.name}</DetailesTitle>
                 <Towers>
                     <Tower>
                         <img src="/assets/img/star.svg" style={{ marginRight: '12px' }} />
-                        <HotelDetailesText>4.8 <ZuichReviews>{t('zuichReviews')}</ZuichReviews> </HotelDetailesText>
+                        <HotelDetailesText>{hotelInfo.rating} <ZuichReviews>{hotelInfo.reviews}{t('zuichReviews')}</ZuichReviews> </HotelDetailesText>
                     </Tower>
                     <Tower>
                         <BsFlag style={{ marginRight: '10px', color: '#84878b' }} />
-                        <ZuichReviews>{t('zuichTown')}</ZuichReviews>
+                        <ZuichReviews>{hotelInfo.location}</ZuichReviews>
                     </Tower>
                 </Towers>
                 <DetailesImagesDiv>
-                    <div>
-                        <DetailesFirstImg src="/assets/img/placesToStay.jpg" alt="" />
-                    </div>
-                    <div>
-                        <DetailesSecondImg src="/assets/img/placesToStay2.jpg" alt="" />
-                        <img src="/assets/img/placesToStay3.jpg" alt="" />
-                        <DetailesLastImg src="/assets/img/placesToStay4.jpg" alt="" />
-                    </div>
+                    <DetailesImage src={`/assets/img/${hotelInfo.photo}`} alt="" style={{width: '100%'}} />
                 </DetailesImagesDiv>
                 <CheckingDivs>
                     <div>
@@ -82,7 +78,7 @@ const HotelDetailesLeft = () => {
                         </Spans>
                         <ZuichDiv>
                             <Zuich>{t('exclusiveRoom')}</Zuich>
-                            <DetailesZuich>{t('zuich')}</DetailesZuich>
+                            <DetailesZuich>{hotelInfo.location}</DetailesZuich>
                         </ZuichDiv>
                         <Tabs>
                             <TabList>
@@ -162,7 +158,10 @@ const HotelDetailesLeft = () => {
                     <HotelDetailesAside />
                 </CheckingDivs>
             </HotelDetailesContainer>
-        </HotelDetailesSection>
+        </HotelDetailesSection>}
+
+        {error && <div>{error}</div>}
+        </div>
     );
 };
 

@@ -1,6 +1,6 @@
 import { BiSearch } from 'react-icons/bi';
 import Form from 'react-bootstrap/Form';
-import { SearchLocation, SearchingLocationDiv, SearchingLocationInput, PopularFilters, YourBudgetDiv, NumbersText, PopularFilterTexts, PropertyDiv, PropertyTypeDiv, PopularFiltersCheckboxDiv, SeeMoreDiv, AsideComponent, SeeMoreLink, CheckboxsDiv } from '../styled'
+import { SearchLocation, RangeDiv, RangeNumber, SearchingLocationDiv, SearchingLocationInput, PopularFilters, YourBudgetDiv, NumbersText, PopularFilterTexts, PropertyDiv, PropertyTypeDiv, PopularFiltersCheckboxDiv, SeeMoreDiv, AsideComponent, SeeMoreLink, CheckboxsDiv } from '../styled'
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -44,8 +44,10 @@ const Aside = () => {
             </div>
             <div className="priceRange">
                 <PopularFilters>{t('priceRange')}</PopularFilters>
-                <input onChange={(el) => setRange(el.target.value)} type="range" name="" id="" />
-                <input type="number" value={range} />
+                <RangeDiv>
+                    <input onChange={(el) => setRange(el.target.value)} type="range" name="" id="" style={{width: '200px'}} />
+                    <RangeNumber type="number" value={range} />
+                </RangeDiv>
             </div>
             <div className="propertType">
                 <PopularFilters>{t('propertyType')}</PopularFilters>

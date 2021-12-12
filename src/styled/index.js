@@ -87,7 +87,8 @@ export const DarkTheme = {
     reserveText: "#84878b",
     inpBg: "#3B3E44",
     inpBorder: "#4A4E54",
-    btnColor: "#FCFCFD"
+    btnColor: "#FCFCFD",
+    rangeNumber: "#316BFF"
 };
 
 export const LightTheme = {
@@ -159,10 +160,11 @@ export const LightTheme = {
     reserveText: "#353945",
     inpBg: "#f4f5f7",
     inpBorder: "#E7E8EA",
-    btnColor: "#3B3E44"
+    btnColor: "#3B3E44",
+    rangeNumber: "#0A2541"
 };
 
-// ${(props) => props.theme.cardBorders}
+// ${(props) => props.theme.rangeNumber}
 
 // Header
 
@@ -239,7 +241,7 @@ export const IntroTitle = styled.h1`
     font-size: 64px;
     line-height: 80px;
     color: #3B3E44;
-    padding-top: 210px;
+    padding-top: 180px;
     padding-bottom: 100px;
 `;
 
@@ -1059,7 +1061,7 @@ export const HotelListComponents = styled.div`
 
 export const HotelListSection = styled.section`
     background-color: ${(props) => props.theme.hotelListSecBg};
-    padding-top: 70px;
+    padding-top: 185px;
     padding-bottom: 200px;
 `;
 
@@ -1221,6 +1223,21 @@ export const BookingButtons = styled.div`
     justify-content: space-between;
 `;
 
+export const LinkToDetailes = styled(Link) `
+    display: block;
+    text-decoration: none;
+    background-color: #3B71FE;
+    border: 1px solid #3B71FE;
+    border-radius: 23px;
+    padding: 10px 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'DM Sans',sans-serif;
+    line-height: 26px;
+    margin-top: 20px;
+`
+
 export const BookingButton = styled.button`
     display: block;
     background-color: #3B71FE;
@@ -1292,23 +1309,12 @@ export const DetailesTitle = styled.h1`
 `;
 
 export const DetailesImagesDiv = styled.div`
-    display: flex;
+    border-radius: 20px;
 `;
 
-export const DetailesFirstImg = styled.img`
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    margin-right: 12px;
-`;
-
-export const DetailesSecondImg = styled.img`
-    border-top-right-radius: 20px;
-    margin-bottom: 16px;
-`;
-
-export const DetailesLastImg = styled.img`
-    border-bottom-right-radius: 20px;
-    margin-top: 16px;
+export const DetailesImage = styled.img`
+    width: 100%;
+    border-radius: 20px;
 `;
 
 export const GreenSpan = styled.span`
@@ -1385,6 +1391,7 @@ export const ZuichDiv = styled.div`
     border-bottom: 1px solid ${(props) => props.theme.detailesBorder};
     width: 100%;
     padding-bottom: 31px;
+    margin-bottom: 20px;
 `;
 
 export const DetailesText = styled.p`
@@ -1394,6 +1401,26 @@ export const DetailesText = styled.p`
     line-height: 24px;
     font-family: 'DM Sans',sans-serif;
     width: 743px;
+    margin-top: 20px;
+`;
+
+export const RangeDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const RangeNumber = styled.input`
+    border: 2px solid #316BFF;
+    border-radius: 9px;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: 'Roboto',sans-serif;
+    color: ${(props) => props.theme.rangeNumber};
+    width: 60px;
+    padding: 7px 10px;
+    background: transparent;
 `;
 
 export const DetailesFeatures = styled.h4`

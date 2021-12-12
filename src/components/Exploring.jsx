@@ -17,8 +17,8 @@ const Exploring = () => {
     useEffect(() => {
         apiCalls.getExplore().then(data => {
             setExplore(data);
-        }).catch( err => {
-            setError(err.message)
+        }).catch( error => {
+            setError(error.message)
         })
     }, []);
 
@@ -40,7 +40,7 @@ const Exploring = () => {
                     </div>
 
                 </SwiperSliderDiv>
-                <Swiper
+                {!error && <Swiper
                     slidesPerView={4} spaceBetween={30}
                     modules={[Navigation]} navigation={{
                         nextEl: '.my-button-next',
@@ -72,7 +72,11 @@ const Exploring = () => {
                     </SwiperSlide>
                     ))}
 
-                </Swiper>
+                </Swiper>}
+
+
+                {error && <div>{error}</div>}
+
             </Container>
         </TopTourSection>
     );

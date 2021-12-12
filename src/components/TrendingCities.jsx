@@ -11,8 +11,8 @@ const TrendingCities = () => {
     useEffect(() => {
         apiCalls.getCities().then(data => {
             setCities(data);
-        }).catch( err => {
-            setError(err.message)
+        }).catch( error => {
+            setError(error.message)
         })
     }, []);
 
@@ -23,7 +23,8 @@ const TrendingCities = () => {
             <Container>
             <TrendingCitiesTitle>{t('trendingCities_title')}</TrendingCitiesTitle>
             <TrendingCitiesText>{t('trendingCities_text')}</TrendingCitiesText>
-            <TrendingCitiesCards>
+            
+            {!error && <TrendingCitiesCards>
                 {cities.map(e => (
                     <TrendingCitiesCard key={e.id}>
                     <CityInTradeImage src={`assets/img/${e.photo}`}/>
@@ -38,7 +39,10 @@ const TrendingCities = () => {
                     </TrendingCityTexts>
                 </TrendingCitiesCard>
                 ))}
-            </TrendingCitiesCards>
+            </TrendingCitiesCards>}
+
+            {error && <div>{error}</div>}
+
             </Container>
         </TrendingCitiesSection>
     );

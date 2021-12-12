@@ -3,9 +3,25 @@ import { BsCalendar4Week } from 'react-icons/bs';
 import Form from 'react-bootstrap/Form';
 import { useTranslation } from 'react-i18next';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useParams } from 'react-router';
+import { useEffect } from 'react';
+import apiCalls from '../config/api';
 
 
 const HotelDetailesAside = () => {
+
+    const [hotelInfo, setHotelInfo] = useState({});
+    const [error, setError] = useState('');
+
+    const { id } = useParams();
+    useEffect(() => {
+        apiCalls.getHotelDetail(id).then(data => {
+            setHotelInfo(data);
+        }).catch(error => {
+            setError(error.message)
+        })
+    }, [id])
 
     let History = useNavigate();
     const { t } = useTranslation();
@@ -16,9 +32,10 @@ const HotelDetailesAside = () => {
         History('/hotelpayment')
     }
     return (
-        <HotelDetailAside>
+        <div>
+            {!error && <HotelDetailAside key={hotelInfo.id}>
             <OffCostDiv>
-                <OffCost>$142 <OffCostText>{t('forNight')}</OffCostText></OffCost>
+                <OffCost>$ {hotelInfo.price}<OffCostText>{t('forNight')}</OffCostText></OffCost>
                 <TravelUi>$184</TravelUi>
                 <OffCostSpan>{t('20%Off')}</OffCostSpan>
             </OffCostDiv>
@@ -110,7 +127,12 @@ const HotelDetailesAside = () => {
             </PropertyTypeDiv>
             <HotelBooking onClick={handleSubmit} type="button">{t('bookButton')}</HotelBooking>
             <NotCharged>{t('notCharged')}</NotCharged>
-        </HotelDetailAside>
+        </HotelDetailAside>}
+
+
+        {error && <div>{error}</div>}
+
+        </div>
     )
 };
 
