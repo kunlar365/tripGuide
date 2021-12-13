@@ -23,7 +23,7 @@ const TopTour = () => {
             }).catch( error => {
                 setError(error.message)
             })
-        }, 10000)
+        }, 2000)
     }, []);
 
     SwiperCore.use([Navigation]);

@@ -32,7 +32,7 @@ const HotelListCards = () => {
             }).catch( error => {
                 setError(error.message)
             })
-        }, 10000)
+        }, 2000)
     }, []);
 
     const content = isLoading ? <Loader/> : <div className="hotelsList">

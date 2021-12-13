@@ -18,7 +18,7 @@ const TrendingCities = () => {
             }).catch( error => {
                 setError(error.message)
             })
-        }, 10000)
+        }, 2000)
     }, []);
 
     const { t } = useTranslation();
