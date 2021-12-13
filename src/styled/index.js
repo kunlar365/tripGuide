@@ -1532,7 +1532,6 @@ export const HotelDetailesComponents = styled.div`
 export const HotelPaymentComponents = styled.div`
     width: 1240px;
     margin: 0 auto;
-    padding-top: 70px;
 `;
 
 export const HotelDetailesContainer = styled.div`
@@ -1639,7 +1638,7 @@ export const PriceDiv = styled.div`
     background-color: ${(props) => props.theme.checkingDiv};
 `;
 
-export const HotelBooking = styled.button`
+export const HotelBooking = styled(Link)`
     background-color: ${(props) => props.theme.hotelBooking};
     padding: 11px 110px;
     font-size: 20px;
@@ -1650,6 +1649,7 @@ export const HotelBooking = styled.button`
     color: #fff;
     border-radius: 12px;
     border: none;
+    text-decoration: none;
 `;
 
 export const HotelDetailAside = styled.div`
@@ -1681,7 +1681,7 @@ export const NotCharged = styled.p`
     font-family: 'DM Sans',sans-serif;
     font-weight: 400;
     color: #777E90;
-    margin-top: 12px;
+    margin-top: 30px;
 `;
 
 export const ButtonDiv = styled.div`
@@ -1865,7 +1865,7 @@ export const SaveCardText = styled.p`
     margin: 0 0 0 12px;
 `;
 
-export const ConfirmAndBook = styled.button`
+export const ConfirmAndBook = styled(Link)`
     background-color: #3B71FE;
     color: #fff;
     border-radius: 36px;
@@ -1876,6 +1876,8 @@ export const ConfirmAndBook = styled.button`
     font-family: 'Roboto',sans-serif;
     line-height: 27px;
     margin-top: 35px;
+    text-decoration: none;
+    display: inline-block;
 `;
 
 export const AsideReviews = styled.div`
@@ -1978,6 +1980,7 @@ export const AsideImg = styled.img`
     border-radius: 10px;
     margin-top: 26px;
     margin-bottom: 32px;
+    width: 100%;
 `;
 
 export const ReportText = styled.p`
@@ -2137,7 +2140,7 @@ export const GoToYour = styled.button`
 `;
 
 export const CongrutulationsPage = styled.div`
-    padding-top: 100px;
+    padding-bottom: 100px;
 `;
 
 export const CongrutulationsMainDiv = styled.div`
@@ -2149,6 +2152,8 @@ export const CongrutulationsMainDiv = styled.div`
 export const CongrutulationsImg = styled.img`
     border-radius: 20px;
     margin-top: -90px;
+    width: 670px;
+    height: 403px;
 `;
 
 export const FlexDiv = styled.div`

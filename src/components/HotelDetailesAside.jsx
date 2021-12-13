@@ -27,10 +27,6 @@ const HotelDetailesAside = () => {
     const { t } = useTranslation();
     //{t('notCharged')}
 
-    const handleSubmit = (el) => {
-        el.preventDefault()
-        History('/hotelpayment')
-    }
     return (
         <div>
             {!error && <HotelDetailAside key={hotelInfo.id}>
@@ -125,7 +121,7 @@ const HotelDetailesAside = () => {
                 </PropertyDiv>
                 <PopularFilterTexts>$300</PopularFilterTexts>
             </PropertyTypeDiv>
-            <HotelBooking onClick={handleSubmit} type="button">{t('bookButton')}</HotelBooking>
+            <HotelBooking to={`/hotelpayment/${hotelInfo.id}`}>{t('bookButton')}</HotelBooking>
             <NotCharged>{t('notCharged')}</NotCharged>
         </HotelDetailAside>}
 

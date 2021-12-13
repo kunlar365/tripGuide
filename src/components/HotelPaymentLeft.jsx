@@ -4,18 +4,33 @@ import { BsCheck2 } from 'react-icons/bs';
 import HotelPaymentAside from './HotelPaymentAside';
 import { useTranslation } from 'react-i18next';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useParams } from 'react-router';
+import { useEffect } from 'react';
+import apiCalls from '../config/api';
+import Loader from './Loader';
 
 
 const HotelPaymentLeft = () => {
 
+    const [hotelInfo, setHotelInfo] = useState({});
+    const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+
+    const { id } = useParams();
+    useEffect(() => {
+        setTimeout(() => {
+            apiCalls.getHotelDetail(id).then(data => {
+                setHotelInfo(data);
+                setIsLoading(false);
+            }).catch(error => {
+                setError(error.message)
+            })
+        }, 2000)
+    }, [id]);
     let History = useNavigate();
     const { t } = useTranslation();
     //{t('confirm')}
-
-    const handleSubmit = (el) => {
-        el.preventDefault()
-        History('/hotelcongrutulations')
-    }
     
     return (
         <HotelPaymentDiv>
@@ -108,7 +123,7 @@ const HotelPaymentLeft = () => {
                         <SaveCardText>{t('saveCard')}</SaveCardText>
                     </SaveCardDiv>
                 </div>
-                <ConfirmAndBook onClick={handleSubmit} type="button">{t('confirm')}</ConfirmAndBook>
+                <ConfirmAndBook to={`/hotelcongrutulations/${hotelInfo.id}`}>{t('confirm')}</ConfirmAndBook>
             </HotelPaymentLeftDiv>
             <HotelPaymentAside/>
         </HotelPaymentDiv>
